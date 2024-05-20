@@ -1,0 +1,30 @@
+---
+import Link from "../components/Link.astro";
+const { link } = Astro.props;
+---
+
+<article>
+  <Link link="/" variant="breadcrumb">Hjem</Link><p>/</p>
+  <Link link="/products" variant="breadcrumb">Produkter</Link><p>/</p>
+  <Link link="/#" variant="breadcrumb">Her</Link>
+</article>
+
+<style>
+  article {
+    display: flex;
+    flex-direction: row;
+    gap: var(--spacing_5);
+    margin: var(--spacing_4);
+  }
+  p {
+    font-family: var(--font_display);
+    font-size: 1.25rem;
+    color: var(--primary_50);
+  }
+  /* 
+  @media (min-width: 800px) {
+    article {
+      margin: var(--spacing_7) var(--spacing_13) 0;
+    }
+  } */
+</style>

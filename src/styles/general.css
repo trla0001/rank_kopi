@@ -58,6 +58,7 @@ html {
   --radius_s: 4px;
   --radius_m: 8px;
   --radius_l: 16px;
+  --radius_max: 36px;
 
   /* EFFECTS */
 }

@@ -1,0 +1,27 @@
+---
+
+---
+
+<article>
+  <p><slot /></p>
+  <img src="/img/svg/shopping_bag-light.svg" alt="icon" />
+  <!-- <p>Kurv</p> -->
+</article>
+
+<style>
+  article {
+    display: flex;
+    gap: var(--spacing_2);
+    background-color: var(--accent_600);
+    border-radius: var(--radius_max);
+    padding: var(--spacing_2) var(--spacing_4);
+  }
+
+  p {
+    color: var(--primary_100);
+  }
+
+  img {
+    width: 24px;
+  }
+</style>
