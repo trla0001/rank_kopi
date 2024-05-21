@@ -5,10 +5,15 @@ import Text from "../components/Text.astro";
 import Breadcrumbs from "../components/Breadcrumbs.astro";
 import CardProduct from "../components/CardProduct.astro";
 import InstagramGrid from "../components/InstagramGrid.astro";
+import CardCollection from "../components/CardCollection.astro";
 ---
 
 <MainLayouts title="Forside">
   <Breadcrumbs />
+
+  <section class="background collections">
+    <CardCollection />
+  </section>
   <section class="about">
     <Text color="dark" heading="Tester"><p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eos eius suscipit quibusdam, dolorum sed alias! Cupiditate facere natus tempore, laudantium, odio quisquam iure voluptatum obcaecati delectus eius sunt amet excepturi!</p></Text>
     <Button type="secondary" link="#">Læs mere</Button>
@@ -39,6 +44,12 @@ import InstagramGrid from "../components/InstagramGrid.astro";
     padding: var(--spacing_9) var(--spacing_5);
   }
 
+  /* KOLLEKTIONER SECTION */
+  .collections {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing_6);
+  }
   /* OM RANK SECTION */
   .about {
     display: flex;
