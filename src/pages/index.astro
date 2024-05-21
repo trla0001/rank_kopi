@@ -1,17 +1,29 @@
 ---
 import MainLayouts from "../layouts/MainLayouts.astro";
 import Button from "../components/Button.astro";
+import Breadcrumbs from "../components/Breadcrumbs.astro";
+import CardProduct from "../components/CardProduct.astro";
 ---
 
 <MainLayouts title="Forside">
+  <Breadcrumbs />
   <div>
     <Button type="primary" color="light" link="">Tester 2</Button>
     <Button type="secondary" color="" link="">Tester 3</Button>
   </div>
+  <section>
+    <CardProduct />
+    <CardProduct />
+  </section>
 </MainLayouts>
 
 <style>
   div {
     display: flex;
+  }
+  section {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: var(--spacing_4);
   }
 </style>

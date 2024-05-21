@@ -54,7 +54,7 @@ html {
   --spacing_12: 72px;
   --spacing_13: 15%;
 
-  /* EFFECTS */
+  /* RADIUS */
   --radius_s: 4px;
   --radius_m: 8px;
   --radius_l: 16px;
@@ -74,12 +74,17 @@ html {
 body {
   max-width: 1800px;
   margin: 0 auto;
-  background-color: var(--white);
+  background-color: var(--primary_100);
 }
 
 img {
   width: 100%;
   height: auto;
+}
+
+.icon {
+  width: 24px;
+  height: 24px;
 }
 
 /************* TEXT STYLING *************/
@@ -118,7 +123,7 @@ p {
   max-width: 65ch;
 }
 
-/************* LINK STYLING *************/
+/************* LINK + BUTTON STYLING *************/
 a {
   font-family: var(--font_display);
   color: var(--accent_600);
@@ -127,6 +132,12 @@ a {
 
 a:hover {
   font-weight: 600;
+}
+
+button {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
 }
 
 @media (min-width: 800px) {

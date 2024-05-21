@@ -1,0 +1,120 @@
+---
+import Basket from "./Basket.astro";
+---
+
+<a href="card_link">
+  <article>
+    <img src="/img/webp/tester.webp" alt="Product picture" />
+    <div class="info">
+      <div class="graphics">
+        <Basket>Color</Basket>
+        <button> </button>
+      </div>
+      <div class="text">
+        <p>Navn</p>
+        <p><span class="dot">&#8226;</span>Serie</p>
+      </div>
+      <p>
+        <span class="price price_sale">XXX</span>
+        <span class="price_kr price_sale"> kr</span>
+        <span class="price_old">XXXX</span><span class="price_old_kr"> kr</span>
+      </p>
+    </div>
+
+    <p class="flag sold">udsolgt</p>
+  </article>
+</a>
+
+<style>
+  a {
+    text-decoration: none;
+    border-radius: var(--radius_m);
+    box-shadow:
+      0px 1px 3px rgba(210, 210, 210, 0.8),
+      0px 4px 10px rgba(210, 210, 210, 0.8);
+  }
+  a:hover {
+    text-decoration: none;
+    box-shadow:
+      0px 1px 3px rgb(190, 190, 190, 0.95),
+      0px 4px 10px rgb(190, 190, 190, 0.95);
+  }
+
+  article {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+  }
+
+  img {
+    border-radius: var(--radius_m) var(--radius_m) 0 0;
+  }
+  .info {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing_3);
+
+    background-color: var(--primary_200);
+    padding: var(--spacing_4);
+    border-radius: 0 0 var(--radius_m) var(--radius_m);
+  }
+
+  .graphics {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .text {
+    display: flex;
+    gap: var(--spacing_4);
+  }
+
+  .text span {
+    margin-right: var(--spacing_4);
+  }
+
+  .flag {
+    position: absolute;
+    z-index: 10;
+    background-color: var(--accent_600);
+    border-radius: var(--radius_max) 0 0 var(--radius_max);
+
+    color: var(--primary_100);
+    text-transform: uppercase;
+
+    padding: var(--spacing_3) var(--spacing_3) var(--spacing_3) var(--spacing_6);
+    top: var(--spacing_4);
+    right: 0;
+  }
+
+  .sold {
+    background-color: var(--accent_800);
+  }
+
+  .price_sale {
+    color: var(--accent_600);
+  }
+
+  .price_old {
+    margin-left: var(--spacing_3);
+  }
+  .price_old,
+  .price_old_kr {
+    text-decoration: line-through;
+    font-size: 0.75rem;
+  }
+
+  button {
+    height: 36px;
+    width: 36px;
+    background: url(/img/svg/shopping_bag-dark.svg);
+    background-repeat: no-repeat;
+    border-radius: var(--radius_max);
+    background-position: center;
+  }
+  button:hover {
+    background: url(/img/svg/shopping_bag-light.svg), var(--accent_600);
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+</style>
