@@ -1,0 +1,19 @@
+---
+import InstagramPost from "./InstagramPost.astro";
+---
+
+<article>
+  <InstagramPost />
+  <InstagramPost />
+  <InstagramPost />
+  <InstagramPost />
+  <InstagramPost />
+  <InstagramPost />
+</article>
+
+<style>
+  article {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+</style>

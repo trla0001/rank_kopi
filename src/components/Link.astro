@@ -1,0 +1,30 @@
+---
+const { variant, link, page } = Astro.props;
+---
+
+<a href={link} class={variant + " "}><slot /></a>
+
+<style>
+  a {
+    text-decoration: none;
+    color: var(--secondary_500);
+  }
+  .main {
+    font-size: 1.125rem;
+    text-transform: uppercase;
+  }
+  .active {
+    text-decoration: underline;
+    filter: drop-shadow(0 0 4px var(--primary_50));
+  }
+
+  .breadcrumb {
+    font-size: 1rem;
+  }
+
+  @media (min-width: 800px) {
+    .breadcrumb {
+      font-size: 1.25rem;
+    }
+  }
+</style>

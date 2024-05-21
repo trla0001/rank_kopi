@@ -1,0 +1,24 @@
+---
+import Button from "../components/Button.astro";
+
+const { heading, color } = Astro.props;
+---
+
+<article>
+  <h2 class={color}>{heading}</h2>
+  <slot />
+</article>
+
+<style>
+  article {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing_5);
+  }
+  .light {
+    color: var(--primary_100);
+  }
+  .dark {
+    color: var(--secondary_500);
+  }
+</style>
