@@ -3,7 +3,7 @@ const { type, title } = Astro.props;
 ---
 
 <details class={type}>
-  <summary>{title}<img class="arrow" src="/arrow_down.svg" alt="arrow for accordion" /></summary>
+  <summary>{title}</summary>
   <article>
     <slot />
   </article>
@@ -50,7 +50,11 @@ const { type, title } = Astro.props;
   }
 
   /* Arrow icon */
-  .arrow {
-    width: 15px;
+  details summary::after {
+    /* content: url(/img/svg/arrow_down.svg); */
+    content: url(/img/svg/arrow_down.svg);
+  }
+  details[open] > summary::after {
+    transform: rotate(-180deg);
   }
 </style>
