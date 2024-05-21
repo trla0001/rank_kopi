@@ -1,0 +1,36 @@
+---
+import Button from "../components/Button.astro";
+
+const { img, heading, button, button_txt } = Astro.props;
+---
+
+<section>
+  <img src=`/img/webp/${img}` alt="" />
+  <article>
+    <h1>{heading}</h1>
+    <slot />
+    <div class={button}>
+      <Button>{button_txt}</Button>
+    </div>
+  </article>
+</section>
+
+<style>
+  section {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing_5);
+    margin: 0 0 var(--spacing_9);
+  }
+
+  article {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing_5);
+    padding: var(--spacing_5);
+  }
+
+  .hide {
+    display: none;
+  }
+</style>

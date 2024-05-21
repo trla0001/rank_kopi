@@ -6,11 +6,13 @@ import Breadcrumbs from "../components/Breadcrumbs.astro";
 import CardProduct from "../components/CardProduct.astro";
 import InstagramGrid from "../components/InstagramGrid.astro";
 import CardCollection from "../components/CardCollection.astro";
+import Hero from "../components/Hero.astro";
 ---
 
 <MainLayouts title="Forside">
-  <Breadcrumbs />
-
+  <Hero img="tester2.png" heading="Tester" button="" button_txt="Køb nu">
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+  </Hero>
   <section class="background collections">
     <CardCollection />
   </section>
