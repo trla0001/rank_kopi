@@ -1,0 +1,43 @@
+---
+
+---
+
+<article>
+  <div class="remove">
+    <img src="/img/svg/remove.svg" alt="" class="icon" />
+  </div>
+  <div class="number">
+    <p>1</p>
+  </div>
+  <div class="add">
+    <img src="/img/svg/add.svg" alt="" class="icon" />
+  </div>
+</article>
+
+<style>
+  article {
+    display: flex;
+  }
+  div {
+    background-color: var(--primary_200);
+    border: solid;
+    border-color: var(--primary_400);
+
+    padding: var(--spacing_4);
+  }
+
+  .remove {
+    padding-left: var(--spacing_6);
+    border-right: none;
+    border-radius: var(--radius_max) 0 0 var(--radius_max);
+  }
+  .add {
+    padding-right: var(--spacing_6);
+    border-left: none;
+    border-radius: 0 var(--radius_max) var(--radius_max) 0;
+  }
+  .number {
+    border-right: none;
+    border-left: none;
+  }
+</style>
