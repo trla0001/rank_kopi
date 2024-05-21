@@ -1,0 +1,46 @@
+---
+const { link } = Astro.props;
+---
+
+<div>
+  <img src="/img/webp/tester.webp" alt="Instagram post" />
+  <img src="/img/svg/instagram-light.svg" class="icon" />
+  <a href={link} class="filter"></a>
+</div>
+
+<style>
+  div {
+    position: relative;
+    padding: 0;
+    margin: 0;
+  }
+  a {
+    text-decoration: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  .icon {
+    position: absolute;
+    top: var(--spacing_4);
+    right: var(--spacing_4);
+    z-index: 2;
+    transition: 300ms;
+  }
+
+  div:hover .icon {
+    position: absolute;
+    top: 40%;
+    right: 40%;
+    z-index: 2;
+  }
+
+  div:hover a {
+    position: absolute;
+
+    background-color: rgba(29, 13, 3, 0.25);
+  }
+</style>

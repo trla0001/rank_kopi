@@ -1,29 +1,58 @@
 ---
 import MainLayouts from "../layouts/MainLayouts.astro";
 import Button from "../components/Button.astro";
+import Text from "../components/Text.astro";
 import Breadcrumbs from "../components/Breadcrumbs.astro";
 import CardProduct from "../components/CardProduct.astro";
+import InstagramGrid from "../components/InstagramGrid.astro";
 ---
 
 <MainLayouts title="Forside">
   <Breadcrumbs />
-  <div>
-    <Button type="primary" color="light" link="">Tester 2</Button>
-    <Button type="secondary" color="" link="">Tester 3</Button>
-  </div>
-  <section>
-    <CardProduct />
-    <CardProduct />
+  <section class="about">
+    <Text color="dark" heading="Tester"><p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eos eius suscipit quibusdam, dolorum sed alias! Cupiditate facere natus tempore, laudantium, odio quisquam iure voluptatum obcaecati delectus eius sunt amet excepturi!</p></Text>
+    <Button type="secondary" link="#">Læs mere</Button>
+    <img src="/img/webp/tester.webp" alt="" />
+  </section>
+  <section class="background some">
+    <Text color="light" heading="Tester"><p class="light">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eos eius suscipit quibusdam, dolorum sed alias! Cupiditate facere natus tempore, laudantium, odio quisquam iure voluptatum obcaecati delectus eius sunt amet excepturi!</p></Text>
+    <InstagramGrid />
   </section>
 </MainLayouts>
 
 <style>
+  .light {
+    color: var(--primary_100);
+  }
+  .dark {
+    color: var(--secondary_500);
+  }
   div {
     display: flex;
   }
+  .background {
+    background-color: var(--accent_900);
+  }
+
+  /* GENERAL SECTION */
   section {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    gap: var(--spacing_4);
+    padding: var(--spacing_9) var(--spacing_5);
+  }
+
+  /* OM RANK SECTION */
+  .about {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing_6);
+  }
+
+  /* SO ME SECTION */
+  .some {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing_6);
+  }
+
+  @media (min-width: 800px) {
   }
 </style>
