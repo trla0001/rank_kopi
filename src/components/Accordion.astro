@@ -1,0 +1,56 @@
+---
+const { type, title } = Astro.props;
+---
+
+<details class={type}>
+  <summary>{title}<img class="arrow" src="/arrow_down.svg" alt="arrow for accordion" /></summary>
+  <article>
+    <slot />
+  </article>
+</details>
+
+<style>
+  /***** Header Accordion ******/
+  .header {
+  }
+
+  /* Detail margin */
+  .footer,
+  .filter {
+    margin: 0 var(--spacing_3);
+  }
+
+  /* Filter detail margin */
+  .filter {
+    border-top: var(--spacing_1) solid var(--secondary_200);
+  }
+
+  /* Summary styling and placement */
+  .footer summary,
+  .filter summary {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: var(--font_body);
+    font-size: 1rem;
+    color: var(--secondary_500);
+    padding: var(--spacing_4) var(--spacing_3);
+    cursor: pointer;
+  }
+
+  /* Footer summary */
+  .footer summary {
+    border-bottom: var(--spacing_1) solid var(--secondary_200);
+  }
+
+  /* article padding */
+  .footer article,
+  .filter article {
+    padding: var(--spacing_2) 0 0 var(--spacing_3);
+  }
+
+  /* Arrow icon */
+  .arrow {
+    width: 15px;
+  }
+</style>
