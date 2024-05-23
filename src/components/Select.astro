@@ -1,18 +1,18 @@
 ---
+import Accordion from "./Accordion.astro";
 
+const { img, title } = Astro.props;
 ---
 
 <details>
   <summary>
     <div>
-      <img src="/img/svg/filter_alt.svg" alt="ikon" class="icon" />
-      <p class="heading">Sorter</p>
+      <img src=`/img/svg/${img}` alt="ikon" class="icon" />
+      <p class="heading">{title}</p>
     </div>
   </summary>
   <article>
-    <p>Lav til høj - pris</p>
-    <p>høj til lav - pris</p>
-    <p>Mest relevant</p>
+    <slot />
   </article>
 </details>
 
@@ -20,8 +20,9 @@
   details {
     background-color: var(--primary_300);
     border-radius: var(--radius_m);
-    padding: var(--spacing_3) var(--spacing_5);
-    margin: var(--spacing_5);
+    padding: var(--spacing_2) var(--spacing_5);
+    width: 100%;
+    height: fit-content;
   }
 
   /* Summary styling and placement */
@@ -39,6 +40,7 @@
   div {
     display: flex;
     gap: var(--spacing_4);
+    margin-right: var(--spacing_4);
   }
 
   .heading {
