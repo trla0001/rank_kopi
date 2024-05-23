@@ -1,0 +1,16 @@
+---
+const { heading } = Astro.props;
+---
+
+<div>
+  <h2>{heading}</h2>
+  <p><slot /></p>
+</div>
+
+<style>
+  div {
+    background-color: var(--primary_200);
+    border-radius: var(--radius_m);
+    padding: var(--spacing_7) var(--spacing_5);
+  }
+</style>

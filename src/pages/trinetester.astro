@@ -4,6 +4,8 @@ import FormButton from "../components/FormButton.astro";
 import FormInput from "../components/FormInput.astro";
 import Accordion from "../components/Accordion.astro";
 import CardCollection from "../components/CardCollection.astro";
+import CardLayers from "../components/CardLayers.astro";
+import Grid from "../components/Grid.astro";
 ---
 
 <section class="dark">
@@ -21,14 +23,42 @@ import CardCollection from "../components/CardCollection.astro";
   </Accordion>
 </section>
 
+<section class="dark">
+  <CardLayers heading="tester one" type="one" img="tester.webp">
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae tempora, id aliquid delectus reiciendis inventore, eius odit eum, cupiditate repudiandae consequatur nesciunt tenetur voluptate ea modi dicta vero corrupti! Dolorum?
+  </CardLayers>
+</section>
+
+<section>
+  <Accordion type="filter" title="Kategori">
+    <p>It's not quite like in HTML</p>
+    <p>But better</p>
+  </Accordion>
+  <Accordion type="footer" title="Kontakt">
+    <p>It's not quite like in HTML</p>
+    <p>But better</p>
+  </Accordion>
+</section>
+<section class="dark">
+  <Grid />
+</section>
+
 <style>
   section {
     margin: 2rem;
   }
-
+  img {
+    border-radius: var(--radius_m);
+    /* margin-top: 1rem; */
+  }
   .dark {
     margin: 0;
-    padding: 2rem;
+    padding: 2rem 1rem;
     background-color: var(--accent_800);
+  }
+  @media (min-width: 800px) {
+    .dark {
+      padding: 0 var(--spacing_13);
+    }
   }
 </style>

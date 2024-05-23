@@ -1,0 +1,76 @@
+---
+import CardLayers from "./CardLayers.astro";
+---
+
+<article class="grid">
+  <img src="/img/webp/tester2.png" alt="tester" class="item_1" />
+  <div class="item_11">
+    <CardLayers heading="Tester"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero at iure ipsa magni praesentium exercitationem ab, doloribus inventore harum quod itaque ad eveniet voluptatem maxime error dolore recusandae obcaecati! Magnam. </CardLayers>
+  </div>
+  <img src="/img/webp/tester.webp" alt="tester" class="item_2" />
+  <div class="item_21">
+    <CardLayers heading="Stentøj"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero at iure ipsa magni praesentium exercitationem ab, doloribus inventore harum quod itaque ad eveniet voluptatem maxime error dolore recusandae obcaecati! Magnam. </CardLayers>
+  </div>
+  <img src="/img/webp/tester.webp" alt="tester" class="item_3" />
+
+  <div class="item_31">
+    <CardLayers heading="Porcelæn"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero at iure ipsa magni praesentium exercitationem ab, doloribus inventore harum quod itaque ad eveniet voluptatem maxime error dolore recusandae obcaecati! Magnam. </CardLayers>
+  </div>
+</article>
+<style>
+  img {
+    border-radius: var(--radius_m);
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing_5);
+  }
+
+  .item_1 {
+    grid-column: 1 / span 2;
+  }
+  .item_11 {
+    grid-column: 1 / span 2;
+    grid-row: 1;
+  }
+  .item_21 {
+    grid-column: 1 / span 2;
+    grid-row: 3 / span 1;
+  }
+  .item_31 {
+    grid-column: 1 / span 2;
+    grid-row: 5 / span 1;
+  }
+  @media (min-width: 800px) {
+    .grid {
+      grid-template-columns: repeat(10, 1fr);
+    }
+
+    .item_1 {
+      grid-column: 1 / span 9;
+      grid-row: 1 / span 4;
+    }
+    .item_11 {
+      grid-column: 3 / span 3;
+      grid-row: 3 / span 3;
+    }
+    .item_2 {
+      grid-column: 2 / span 3;
+      grid-row: 9 / span 3;
+    }
+    .item_21 {
+      grid-column: 1 / span 3;
+      grid-row: 8 / span 3;
+    }
+    .item_3 {
+      grid-column: 8 / span 3;
+      grid-row: 7 / span 3;
+    }
+    .item_31 {
+      grid-column: 7 / span 3;
+      grid-row: 8 / span 3;
+    }
+  }
+</style>
