@@ -3,7 +3,7 @@ import MainLayouts from "../layouts/MainLayouts.astro";
 import Button from "../components/Button.astro";
 import Text from "../components/Text.astro";
 import Breadcrumbs from "../components/Breadcrumbs.astro";
-import CardProduct from "../components/CardProduct.astro";
+import CardProductStatic from "../components/CardProductStatic.astro";
 import InstagramGrid from "../components/InstagramGrid.astro";
 import CardCollection from "../components/CardCollection.astro";
 import Hero from "../components/Hero.astro";
@@ -12,6 +12,10 @@ import Colorsample from "../components/Colorsample.astro";
 
 <MainLayouts title="Forside">
   <Colorsample />
+
+  <div class="products">
+    <CardProductStatic img="tester.webp" />
+  </div>
 
   <Hero img="tester2.png" heading="Tester" button="" button_txt="Køb nu">
     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
@@ -31,6 +35,11 @@ import Colorsample from "../components/Colorsample.astro";
 </MainLayouts>
 
 <style>
+  .products {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: var(--spacing_5);
+  }
   .light {
     color: var(--primary_100);
   }
