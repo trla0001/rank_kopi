@@ -3,47 +3,48 @@ import Breadcrumbs from "../components/Breadcrumbs.astro";
 import Button from "../components/Button.astro";
 import Carrousel from "../components/Carrousel.astro";
 import CardProduct from "../components/CardProduct.astro";
-import MainLayouts from "../layouts/MainLayouts.astro";
 import Colorsample from "../components/Colorsample.astro";
 import FormCounter from "../components/FormCounter.astro";
 import FormButton from "../components/FormButton.astro";
+import SingleLayouts from "../layouts/SingleLayouts.astro";
 ---
 
-<MainLayouts>
+<SingleLayouts>
   <Breadcrumbs />
-  <img src="/img/webp/tester.webp" alt="" />
-  <section class="info">
-    <p class="collection">Stabel</p>
-    <h1>Stor Urtepotte</h1>
-    <p>
-      <span class="price price_sale">XXX</span>
-      <span class="price_kr price_sale"> kr</span>
-      <span class="price_old">XXXX</span><span class="price_old_kr"> kr</span>
-    </p>
-    <Colorsample />
-    <FormCounter />
-    <button>Tilføj til kurv</button>
+  <div class="layout">
+    <img src="/img/webp/tester.webp" alt="" />
+    <section class="info">
+      <p class="collection">Stabel</p>
+      <h1 class="name">Stor Urtepotte</h1>
+      <p>
+        <span class="price price_sale">XXX</span>
+        <span class="price_kr price_sale"> kr</span>
+        <span class="price_old">XXXX</span><span class="price_old_kr"> kr</span>
+      </p>
+      <Colorsample />
+      <FormCounter />
+      <button>Tilføj til kurv</button>
 
-    <article>
-      <div class="dimensioner">
-        <div>
-          <h4>Materiale</h4>
-          <p>Stentøj</p>
+      <article>
+        <div class="dimensioner">
+          <div>
+            <h4>Materiale</h4>
+            <p>Stentøj</p>
+          </div>
+          <div>
+            <h4>Mål</h4>
+            <p>24 cm i diameter</p>
+            <p>24 cm i diameter</p>
+          </div>
         </div>
+
         <div>
-          <h4>Mål</h4>
-          <p>24 cm i diameter</p>
-          <p>24 cm i diameter</p>
+          <h4>Beskrivelse</h4>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum, tempore quia sint officiis non corrupti dolorum, a nam possimus explicabo alias vitae suscipit magnam et dolor. Vero natus ex provident.</p>
         </div>
-      </div>
-
-      <div>
-        <h4>Beskrivelse</h4>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum, tempore quia sint officiis non corrupti dolorum, a nam possimus explicabo alias vitae suscipit magnam et dolor. Vero natus ex provident.</p>
-      </div>
-    </article>
-  </section>
-
+      </article>
+    </section>
+  </div>
   <section class="related">
     <h2>Relaterede produkter</h2>
     <Carrousel />
@@ -54,9 +55,13 @@ import FormButton from "../components/FormButton.astro";
 
     <Button type="secondary" link="#">Læs mere</Button>
   </section>
-</MainLayouts>
+</SingleLayouts>
 
 <style>
+  section {
+    margin: var(--spacing_8) var(--spacing_6);
+  }
+
   h1 {
     font-size: 2.25rem;
   }
@@ -92,6 +97,9 @@ import FormButton from "../components/FormButton.astro";
     margin-top: var(--spacing_8);
   }
 
+  .collection {
+    font-size: 1.25rem;
+  }
   .dimensioner {
     display: flex;
     gap: var(--spacing_12);
@@ -134,5 +142,15 @@ import FormButton from "../components/FormButton.astro";
     grid-template-columns: 1fr 1fr;
     gap: var(--spacing_3);
     padding: var(--spacing_3);
+  }
+  @media (min-width: 800px) {
+    .layout {
+      display: flex;
+      gap: var(--spacing_11);
+    }
+
+    .related h2 {
+      align-self: center;
+    }
   }
 </style>

@@ -52,7 +52,7 @@ html {
   --spacing_10: 48px;
   --spacing_11: 64px;
   --spacing_12: 72px;
-  --spacing_13: 15%;
+  --spacing_13: 10%;
 
   /* RADIUS */
   --radius_s: 4px;
@@ -125,7 +125,7 @@ p {
 
 /************* LINK + BUTTON STYLING *************/
 a {
-  font-family: var(--font_display);
+  font-family: var(--font_body);
   color: var(--accent_600);
   text-decoration: underline;
 }
