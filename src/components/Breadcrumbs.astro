@@ -4,9 +4,9 @@ const { link } = Astro.props;
 ---
 
 <article>
-  <Link link="/" variant="breadcrumb">Hjem</Link><p>/</p>
-  <Link link="/products" variant="breadcrumb">Produkter</Link><p>/</p>
-  <Link link="/#" variant="breadcrumb">Her</Link>
+  <Link link="/" variant="breadcrumb" label="Hjem" /><p>/</p>
+  <Link link="/products" variant="breadcrumb" label="Produkter" /><p>/</p>
+  <p>Her</p>
 </article>
 
 <style>
@@ -18,8 +18,8 @@ const { link } = Astro.props;
     margin: var(--spacing_6);
   }
   p {
-    font-family: var(--font_display);
-    font-size: 1.25rem;
+    font-family: var(--font_body);
+    font-size: 1rem;
     color: var(--secondary_500);
   }
 </style>

@@ -1,18 +1,24 @@
 ---
-const { variant, link, page } = Astro.props;
+const { variant, link, label } = Astro.props;
 ---
 
-<a href={link} class={variant + " "}><slot /></a>
+<a href={link} class={variant}><p>{label}</p></a>
 
 <style>
   a {
     text-decoration: none;
     color: var(--secondary_500);
   }
+
+  a:hover {
+    cursor: copy;
+    font-weight: 500;
+  }
   .main {
     font-size: 1.125rem;
     text-transform: uppercase;
   }
+
   .active {
     text-decoration: underline;
     filter: drop-shadow(0 0 4px var(--primary_50));
@@ -20,5 +26,9 @@ const { variant, link, page } = Astro.props;
 
   .breadcrumb {
     font-size: 1rem;
+  }
+
+  .footer {
+    font-size: 0.5rem;
   }
 </style>
