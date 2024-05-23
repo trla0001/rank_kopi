@@ -1,28 +1,32 @@
 ---
 import MainLayouts from "../layouts/MainLayouts.astro";
+import Hero from "../components/Hero.astro";
 import Button from "../components/Button.astro";
 import Text from "../components/Text.astro";
 import Breadcrumbs from "../components/Breadcrumbs.astro";
 import CardProductStatic from "../components/CardProductStatic.astro";
 import InstagramGrid from "../components/InstagramGrid.astro";
 import CardCollection from "../components/CardCollection.astro";
-import Hero from "../components/Hero.astro";
+
 import Carrousel from "../components/Carrousel.astro";
 ---
 
 <MainLayouts title="Forside">
-  <CardProductStatic img="tester.webp" />
-  <Carrousel />
-
-  <Hero img="tester2.png" heading="Tester" button="" button_txt="Køb nu">
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+  <Hero img="tester2.png" heading="Lars Rank" button="" button_txt="Køb nu">
+    <p>Håndlavet keramik med et personligt og unikt udtryk. Lavet med funktionalitet for øje.</p>
   </Hero>
+  <section>
+    <h2>Populære Produkter</h2>
+    <Carrousel />
+  </section>
   <section class="background collections">
     <CardCollection />
   </section>
   <section class="about">
-    <Text color="dark" heading="Tester"><p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eos eius suscipit quibusdam, dolorum sed alias! Cupiditate facere natus tempore, laudantium, odio quisquam iure voluptatum obcaecati delectus eius sunt amet excepturi!</p></Text>
-    <Button type="secondary" link="#">Læs mere</Button>
+    <div>
+      <Text color="dark" heading="Tester"><p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eos eius suscipit quibusdam, dolorum sed alias! Cupiditate facere natus tempore, laudantium, odio quisquam iure voluptatum obcaecati delectus eius sunt amet excepturi!</p></Text>
+      <Button type="secondary" link="#">Læs mere</Button>
+    </div>
     <img src="/img/webp/tester.webp" alt="" />
   </section>
   <section class="background some">
@@ -76,5 +80,10 @@ import Carrousel from "../components/Carrousel.astro";
   }
 
   @media (min-width: 800px) {
+    .about,
+    .some {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
   }
 </style>
