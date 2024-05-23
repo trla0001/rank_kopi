@@ -1,0 +1,27 @@
+---
+const { img, type, hide } = Astro.props;
+---
+
+<div class={type + " " + hide}>
+  <img src=`/img/webp/${img}` />
+</div>
+
+<style>
+  img {
+    border-radius: var(--radius_max);
+  }
+  .option {
+    width: 17px;
+  }
+
+  .option img {
+    border: 1px solid var(--primary_400);
+  }
+
+  .active {
+    width: 19px;
+  }
+  .hide {
+    display: none;
+  }
+</style>
