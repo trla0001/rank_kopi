@@ -14,20 +14,13 @@ const { type, title } = Astro.props;
   .header {
   }
 
-  /* Detail margin */
-  .footer,
-  .filter {
-    margin: 0 var(--spacing_3);
-  }
-
   /* Filter detail margin */
   .filter {
     border-top: var(--spacing_1) solid var(--secondary_200);
   }
 
   /* Summary styling and placement */
-  .footer summary,
-  .filter summary {
+  summary {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -44,8 +37,7 @@ const { type, title } = Astro.props;
   }
 
   /* article padding */
-  .footer article,
-  .filter article {
+  article {
     padding: var(--spacing_2) 0 0 var(--spacing_3);
   }
 

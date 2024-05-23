@@ -3,16 +3,24 @@ import "../styles/general.css";
 import FormButton from "../components/FormButton.astro";
 import FormInput from "../components/FormInput.astro";
 import Accordion from "../components/Accordion.astro";
+import Sorting from "../components/Sorting.astro";
+import Filtering from "../components/Filtering.astro";
 ---
 
-<Accordion type="filter" title="Kategori">
-  <p>It's not quite like in HTML</p>
-  <p>But better</p>
-</Accordion>
-<Accordion type="footer" title="Kontakt">
-  <p>It's not quite like in HTML</p>
-  <p>But better</p>
-</Accordion>
-<FormInput />
+<section>
+  <Accordion type="filter" title="Kategori">
+    <p>It's not quite like in HTML</p>
+    <p>But better</p>
+  </Accordion>
+  <Accordion type="footer" title="Kontakt">
+    <p>It's not quite like in HTML</p>
+    <p>But better</p>
+  </Accordion>
+  <FormInput />
 
-<FormButton>Indsend</FormButton>
+  <FormButton>Indsend</FormButton>
+</section>
+<section>
+  <Filtering />
+  <Sorting />
+</section>
