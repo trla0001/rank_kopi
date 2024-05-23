@@ -1,8 +1,9 @@
 ---
 import Breadcrumbs from "../../components/Breadcrumbs.astro";
 import Button from "../../components/Button.astro";
-import Carrousel from "../../components/Carrousel.astro";
 import CardProduct from "../../components/CardProduct.astro";
+import CardProductStatic from "../../components/CardProductStatic.astro";
+import Carrousel from "../../components/Carrousel.astro";
 import Colorsample from "../../components/Colorsample.astro";
 import FormCounter from "../../components/FormCounter.astro";
 import SingleLayouts from "../../layouts/SingleLayouts.astro";
@@ -18,14 +19,13 @@ export async function getStaticPaths() {
   }).then((res) => res.json());
 
   //Benytter map til at lave en underside for hvert element i databasen
-  return data.map((products) => {
+  return data.map((elm) => {
     return {
-      // Bruger slugget fra database (products.slug) og navngiver filen dét
+      // Bruger slugget fra database (elm.slug) og navngiver filen dét
       // Det første 'slug' henviser til det slug, som er i mit filnavn (som er [slug].astro)
       // Det næste 'slug' henviser til en kolonne i databasen
-      params: { slug: products.slug },
-
-      props: { myData: products },
+      params: { slug: elm.slug },
+      props: { myData: elm },
     };
   });
 }
@@ -71,10 +71,11 @@ console.log(myData);
     </section>
     <section class="related">
       <h2>Relaterede produkter</h2>
-      <Carrousel />
       <div class="placeholder">
-        <CardProduct />
-        <CardProduct />
+        <CardProductStatic link="" img="tester.webp" name="Stor Urtepotte" collection="Stabel" price="" price_old="" />
+        <CardProductStatic link="" img="tester.webp" name="Kagetallerken" collection="Colours" price="" price_old="" />
+        <CardProductStatic link="" img="tester.webp" name="Middagstallerken" collection="Colours" price="" price_old="" />
+        <CardProductStatic link="" img="tester.webp" name="Kop 25 cl" collection="Colours" price="" price_old="" />
       </div>
 
       <Button type="secondary" link="#">Læs mere</Button>
@@ -175,6 +176,13 @@ console.log(myData);
 
       .related h2 {
         align-self: center;
+      }
+      /* PLACEHOLDER */
+      .placeholder {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        gap: var(--spacing_3);
+        padding: var(--spacing_3);
       }
     }
   </style>

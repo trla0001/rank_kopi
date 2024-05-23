@@ -1,25 +1,25 @@
 ---
 import Basket from "./Basket.astro";
 
-const { data } = Astro.props;
+const { link, img, name, collection, price, price_old } = Astro.props;
 ---
 
-<a href={`/single/${data.slug}`}>
+<a href={`/single/${link}`}>
   <article>
-    <img src=`/img/webp/${data.img}` alt="Produkt billede" />
+    <img src=`/img/webp/${img}` alt="Produkt billede" />
     <div class="info">
       <div class="graphics">
         <Basket>Color</Basket>
         <button> </button>
       </div>
       <div class="text">
-        <p>{data.name}</p>
-        <p><span class="dot">&#8226;</span>{data.collection}</p>
+        <p>{name}</p>
+        <p><span class="dot">&#8226;</span>{collection}</p>
       </div>
       <p>
-        <span class="price price_sale">XXX</span>
+        <span class="price price_sale">{price}</span>
         <span class="price_kr price_sale"> kr</span>
-        <span class="price_old">XXXX</span><span class="price_old_kr"> kr</span>
+        <span class="price_old">{price_old}</span><span class="price_old_kr"> kr</span>
       </p>
     </div>
 
