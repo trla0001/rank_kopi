@@ -1,0 +1,24 @@
+---
+const { img, type } = Astro.props;
+---
+
+<div class={type}>
+  <img src=`/img/webp/${img}` />
+</div>
+
+<style>
+  img {
+    border-radius: var(--radius_max);
+  }
+  .option {
+    width: 17px;
+  }
+
+  .option img {
+    border: 1px solid var(--primary_400);
+  }
+
+  .active {
+    width: 19px;
+  }
+</style>
