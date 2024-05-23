@@ -1,20 +1,21 @@
 ---
-import CardProductStatic from "./CardProductStatic.astro";
+import CardProduct from "./CardProduct.astro";
+
+// Fetcher data fra databasen og ligger i konstanten 'data'
+const data = await fetch("https://hhmpiztfssfaluwezhgq.supabase.co/rest/v1/rank_keramik?id=lt.5", {
+  method: "GET",
+  headers: {
+    apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImhobXBpenRmc3NmYWx1d2V6aGdxIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MDgyNzA4NTUsImV4cCI6MjAyMzg0Njg1NX0.TqriEz5DkZTixJO6AhMtVsvt7xiSjMvpJm525z2c9jM",
+  },
+}).then((res) => res.json());
 ---
 
 <div class="carousel">
-  <div carousel-item>
-    <CardProductStatic img="tester.webp" />
-  </div>
-  <div carousel-item>
-    <CardProductStatic img="tester.webp" />
-  </div>
-  <div carousel-item>
-    <CardProductStatic img="tester.webp" />
-  </div>
-  <div carousel-item>
-    <CardProductStatic img="tester.webp" />
-  </div>
+  {
+    data.map((product, i) => {
+      return <CardProduct data={product} />;
+    })
+  }
 </div>
 
 <style>
@@ -34,9 +35,5 @@ import CardProductStatic from "./CardProductStatic.astro";
 
   .carousel::-webkit-scrollbar {
     display: none;
-  }
-
-  .carousel-item {
-    width: 200px; /* eller en hvilken som helst anden ønsket bredde */
   }
 </style>
