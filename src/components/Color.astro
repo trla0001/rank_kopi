@@ -1,8 +1,8 @@
 ---
-const { img, type } = Astro.props;
+const { img, type, hide } = Astro.props;
 ---
 
-<div class={type}>
+<div class={type + " " + hide}>
   <img src=`/img/webp/${img}` />
 </div>
 
@@ -20,5 +20,8 @@ const { img, type } = Astro.props;
 
   .active {
     width: 19px;
+  }
+  .hide {
+    display: none;
   }
 </style>
