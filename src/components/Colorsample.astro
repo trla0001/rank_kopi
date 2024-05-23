@@ -1,0 +1,17 @@
+---
+import Color from "./Color.astro";
+---
+
+<div class="flex">
+  <Color hide="hide" img="tester.webp" type="option" />
+  <Color hide="hide" img="tester.webp" type="active" />
+  <Color hide="hide" img="tester.webp" type="option" />
+  <Color hide="hide" img="tester.webp" type="option" />
+</div>
+
+<style>
+  .flex {
+    display: flex;
+    gap: var(--spacing_2);
+  }
+</style>
