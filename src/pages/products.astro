@@ -1,0 +1,82 @@
+---
+import CardProduct from "../components/CardProduct.astro";
+import Hero from "../components/Hero.astro";
+import MainLayouts from "../layouts/MainLayouts.astro";
+import Accordion from "../components/Accordion.astro";
+
+// Fetcher data fra databasen og ligger i konstanten 'data'
+const data = await fetch("https://hhmpiztfssfaluwezhgq.supabase.co/rest/v1/rank_keramik", {
+  method: "GET",
+  headers: {
+    apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImhobXBpenRmc3NmYWx1d2V6aGdxIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MDgyNzA4NTUsImV4cCI6MjAyMzg0Njg1NX0.TqriEz5DkZTixJO6AhMtVsvt7xiSjMvpJm525z2c9jM",
+  },
+}).then((res) => res.json());
+---
+
+<MainLayouts>
+  <Hero img="tester2.png" heading="Tester" button="hide" button_txt="">
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia accusantium, quas, natus rem cum optio ullam praesentium repudiandae molestiae, ex facere vel autem architecto? Animi dolor similique qui minus nulla.</p>
+  </Hero>
+  <section>
+    <div class="menu">
+      <Accordion type="filter" title="Sorter">
+        <p>It's not quite like in HTML</p>
+        <p>But better</p>
+      </Accordion>
+      <Accordion type="filter" title="Filtre">
+        <p>It's not quite like in HTML</p>
+        <p>But better</p>
+      </Accordion>
+    </div>
+    <div class="products">
+      {
+        data.map((product, i) => {
+          return <CardProduct data={product} />;
+        })
+      }
+
+      <!-- Herter dataen for hvert element som er lig eller over 6, og laver et CardProduct med den, som ligger i en div, som ikke kan ses (pga class 'hide') -->
+      <!-- <div class="extra hide">
+        {
+          data.map((product, i) => {
+            if (i >= 8) {
+              return <CardProduct data={product} />;
+            }
+          })
+        }
+      </div> -->
+    </div>
+  </section>
+</MainLayouts>
+
+<style>
+  section {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing_5);
+    margin: var(--spacing_6);
+  }
+
+  .menu {
+    display: flex;
+    gap: var(--spacing_5);
+  }
+
+  .products {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: var(--spacing_5);
+  }
+
+  @media (min-width: 800px) {
+    .menu {
+      flex-direction: column;
+    }
+
+    section {
+      display: grid;
+      grid-template-columns: 1fr 3fr;
+      margin: 0 var(--spacing_13);
+    }
+  }
+</style>
