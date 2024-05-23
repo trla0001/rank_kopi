@@ -3,9 +3,12 @@ import "../styles/general.css";
 import FormButton from "../components/FormButton.astro";
 import FormInput from "../components/FormInput.astro";
 import Accordion from "../components/Accordion.astro";
-import Sorting from "../components/Sorting.astro";
-import Filtering from "../components/Filtering.astro";
+import CardCollection from "../components/CardCollection.astro";
 ---
+
+<section class="dark">
+  <CardCollection img="tester2.png" collection="Stabel Series" />
+</section>
 
 <section>
   <Accordion type="filter" title="Kategori">
@@ -20,7 +23,15 @@ import Filtering from "../components/Filtering.astro";
 
   <FormButton>Indsend</FormButton>
 </section>
-<section>
-  <Filtering />
-  <Sorting />
-</section>
+
+<style>
+  section {
+    margin: 2rem;
+  }
+
+  .dark {
+    margin: 0;
+    padding: 2rem;
+    background-color: var(--accent_800);
+  }
+</style>

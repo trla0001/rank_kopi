@@ -1,0 +1,47 @@
+---
+const { img, collection } = Astro.props;
+---
+
+<a href="#">
+  <article>
+    <img src=`/img/webp/${img}` alt="Billede af kollektion" />
+    <h3>{collection}</h3>
+  </article>
+</a>
+
+<style>
+  a {
+    text-decoration: none;
+    border-radius: var(--radius_m);
+  }
+  a:hover {
+    text-decoration: none;
+  }
+  article {
+    position: relative;
+    border-radius: var(--radius_m);
+  }
+  img {
+    border-radius: var(--radius_m);
+    box-shadow:
+      0px 1px 3px rgba(46, 16, 9, 0.7),
+      0px 4px 10px rgba(46, 16, 9, 0.7);
+  }
+
+  img:hover {
+    box-shadow:
+      0px 1px 3px rgb(46, 16, 9, 0.95),
+      0px 4px 10px rgb(46, 16, 9, 0.95);
+  }
+  h3 {
+    position: absolute;
+    top: 40%;
+    right: 5%;
+  }
+
+  @media (min-width: 800px) {
+    h3 {
+      font-size: 3rem;
+    }
+  }
+</style>
