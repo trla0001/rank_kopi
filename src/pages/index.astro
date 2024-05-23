@@ -15,7 +15,7 @@ import Carrousel from "../components/Carrousel.astro";
   <Hero img="tester2.png" heading="Lars Rank" button="" button_txt="Køb nu">
     <p>Håndlavet keramik med et personligt og unikt udtryk. Lavet med funktionalitet for øje.</p>
   </Hero>
-  <section>
+  <section class="display">
     <h2>Populære Produkter</h2>
     <Carrousel />
   </section>
@@ -30,7 +30,7 @@ import Carrousel from "../components/Carrousel.astro";
     <img src="/img/webp/tester.webp" alt="" />
   </section>
   <section class="background some">
-    <Text color="light" heading="Tester"><p class="light">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eos eius suscipit quibusdam, dolorum sed alias! Cupiditate facere natus tempore, laudantium, odio quisquam iure voluptatum obcaecati delectus eius sunt amet excepturi!</p></Text>
+    <Text color="light" heading="Følg med"><p class="light">Følg min kreative rejse på Instagram, og få et indblik i mit keramiske univers. Her kan du følge med i udvikling af nye produkter, se processen bag og deltage i konkurrencer.</p></Text>
     <InstagramGrid />
   </section>
 </MainLayouts>
@@ -80,6 +80,13 @@ import Carrousel from "../components/Carrousel.astro";
   }
 
   @media (min-width: 800px) {
+    section {
+      padding: 50px 160px;
+    }
+
+    h2 {
+      text-align: center;
+    }
     .about,
     .some {
       display: grid;
