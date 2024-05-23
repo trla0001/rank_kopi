@@ -1,5 +1,6 @@
 ---
 import Basket from "./Basket.astro";
+import Colorsample from "./Colorsample.astro";
 
 const { data } = Astro.props;
 ---
@@ -9,7 +10,7 @@ const { data } = Astro.props;
     <img src=`/img/webp/${data.img}` alt="Produkt billede" />
     <div class="info">
       <div class="graphics">
-        <Basket>Color</Basket>
+        <Colorsample />
         <button> </button>
       </div>
       <div class="text">
