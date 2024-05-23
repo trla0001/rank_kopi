@@ -1,0 +1,52 @@
+---
+import Accordion from "./Accordion.astro";
+
+const { type, img, title } = Astro.props;
+---
+
+<details class={type}>
+  <summary>
+    <p class="heading">{title}</p>
+  </summary>
+  <article>
+    <slot />
+  </article>
+</details>
+
+<style>
+  details {
+    background-color: var(--primary_100);
+    padding: var(--spacing_2) 0 var(--spacing_4) var(--spacing_2);
+    width: 100%;
+    height: fit-content;
+  }
+
+  /* Summary styling and placement */
+  summary {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: var(--font_body);
+    font-size: 1rem;
+    color: var(--secondary_500);
+    padding: 0 var(--spacing_4);
+    cursor: pointer;
+  }
+  .heading {
+    text-transform: uppercase;
+  }
+
+  /* article padding */
+  article {
+    padding: var(--spacing_4) 0 0 var(--spacing_4);
+  }
+
+  /* Arrow icon */
+  details summary::after {
+    /* content: url(/img/svg/arrow_down.svg); */
+    content: url(/img/svg/arrow_down.svg);
+  }
+  details[open] > summary::after {
+    transform: rotate(-180deg);
+  }
+</style>
