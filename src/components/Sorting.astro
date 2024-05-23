@@ -1,14 +1,14 @@
 ---
-const 
+
 ---
 
 <details>
-  <summary> 
+  <summary>
     <div>
-    <img src="/img/svg/filter_alt.svg" alt="ikon" class="icon" />
-    <p class="heading">Sortér</p>
-  </div>
-</summary>
+      <img src="/img/svg/filter_alt.svg" alt="ikon" class="icon" />
+      <p class="heading">Sorter</p>
+    </div>
+  </summary>
   <article>
     <p>Lav til høj - pris</p>
     <p>høj til lav - pris</p>
@@ -17,10 +17,23 @@ const
 </details>
 
 <style>
-  article {
+  details {
     background-color: var(--primary_300);
     border-radius: var(--radius_m);
     padding: var(--spacing_3) var(--spacing_5);
+    margin: var(--spacing_5);
+  }
+
+  /* Summary styling and placement */
+  summary {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: var(--font_body);
+    font-size: 1rem;
+    color: var(--secondary_500);
+    padding: var(--spacing_4) var(--spacing_3);
+    cursor: pointer;
   }
 
   div {
@@ -30,5 +43,19 @@ const
 
   .heading {
     text-transform: uppercase;
+  }
+
+  /* article padding */
+  article {
+    padding: var(--spacing_2) 0 0 var(--spacing_3);
+  }
+
+  /* Arrow icon */
+  details summary::after {
+    /* content: url(/img/svg/arrow_down.svg); */
+    content: url(/img/svg/arrow_down.svg);
+  }
+  details[open] > summary::after {
+    transform: rotate(-180deg);
   }
 </style>

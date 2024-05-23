@@ -3,6 +3,8 @@ import "../styles/general.css";
 import FormButton from "../components/FormButton.astro";
 import FormInput from "../components/FormInput.astro";
 import Accordion from "../components/Accordion.astro";
+import Sorting from "../components/Sorting.astro";
+import Filtering from "../components/Filtering.astro";
 ---
 
 <section>
@@ -18,4 +20,7 @@ import Accordion from "../components/Accordion.astro";
 
   <FormButton>Indsend</FormButton>
 </section>
-<section></section>
+<section>
+  <Filtering />
+  <Sorting />
+</section>
