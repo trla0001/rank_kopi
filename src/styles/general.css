@@ -117,7 +117,7 @@ h4 {
 p {
   font-family: var(--font_body);
   font-size: 1rem;
-  font-weight: 400;
+  font-weight: 300;
   color: var(--secondary_500);
   line-height: 150%;
   max-width: 65ch;
@@ -126,12 +126,13 @@ p {
 /************* LINK + BUTTON STYLING *************/
 a {
   font-family: var(--font_body);
+  font-weight: 300;
   color: var(--accent_600);
   text-decoration: underline;
 }
 
 a:hover {
-  font-weight: 600;
+  font-weight: 500;
 }
 
 button {
