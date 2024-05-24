@@ -1,9 +1,9 @@
 ---
-const { link } = Astro.props;
+const { link, img } = Astro.props;
 ---
 
 <div>
-  <img src="/img/webp/tester.webp" alt="Instagram post" />
+  <img src=`/img/webp/${img}` alt="Instagram post" />
   <img src="/img/svg/instagram-light.svg" class="icon" />
   <a href={link} class="filter"></a>
 </div>
