@@ -7,12 +7,10 @@ const { img, heading, button, button_txt } = Astro.props;
 <section>
   <img src=`/img/webp/${img}` alt="" />
   <article>
-    <div class="placing">
-      <h1>{heading}</h1>
-      <slot />
-      <div class={button}>
-        <Button>{button_txt}</Button>
-      </div>
+    <h1>{heading}</h1>
+    <slot />
+    <div class={button}>
+      <Button>{button_txt}</Button>
     </div>
   </article>
 </section>
@@ -33,7 +31,24 @@ const { img, heading, button, button_txt } = Astro.props;
   }
 
   @media (min-width: 800px) {
+    section {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+
     img {
+      grid-column: 1 / span 2;
+      grid-row: 1 / span 1;
+    }
+
+    article {
+      grid-column: 2 / span 1;
+      grid-row: 1 / span 1;
+      align-self: center;
+      padding: 0px 100px;
+    }
+
+    /* img {
       position: relative;
       z-index: 1;
     }
@@ -42,15 +57,15 @@ const { img, heading, button, button_txt } = Astro.props;
       z-index: 2;
       display: grid;
       grid-template-columns: 1fr 1fr;
-      grid-template-rows: 1fr 1fr 1fr;
+      justify-content: center;
+      align-items: center;
     }
     .placing {
       display: grid;
       grid-column: 2;
-      grid-row: 2;
       padding: 0px 100px;
       gap: var(--spacing_5);
-    }
+    } */
   }
 
   .hide {
