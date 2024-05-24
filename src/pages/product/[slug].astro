@@ -1,10 +1,8 @@
 ---
 import Breadcrumbs from "../../components/Breadcrumbs.astro";
 import Button from "../../components/Button.astro";
-import CardProduct from "../../components/CardProduct.astro";
 import CardProductStatic from "../../components/CardProductStatic.astro";
-import Carrousel from "../../components/Carrousel.astro";
-import Colorsample from "../../components/Colorsample.astro";
+import Color from "../../components/Color.astro";
 import FormCounter from "../../components/FormCounter.astro";
 import SingleLayouts from "../../layouts/SingleLayouts.astro";
 
@@ -50,7 +48,19 @@ console.log(myData);
           <span class="price_kr price_sale"> kr</span>
           <span class="price_old">XXXX</span><span class="price_old_kr"> kr</span>
         </p>
-        <Colorsample />
+        <div class="colors">
+          {myData.hvid && <Color type="singleview" img="hvid.webp" />}
+          {myData.raa_rust && <Color type="singleview" img="raa_rust.webp" />}
+          {myData.gron && <Color type="singleview" img="gron.webp" />}
+          {myData.graagraa && <Color type="singleview" img="graagraa.webp" />}
+          {myData.morkegron && <Color type="singleview" img="morkegron.webp" />}
+          {myData.gul && <Color type="singleview" img="gul.webp" />}
+          {myData.havblaa && <Color type="singleview" img="havblaa.webp" />}
+          {myData.rust && <Color type="singleview" img="rust.webp" />}
+          {myData.sortbrun && <Color type="singleview" img="sortbrun.webp" />}
+          {myData.lyseblaa && <Color type="singleview" img="lyseblaa.webp" />}
+          {myData.mørkebrun && <Color type="singleview" img="morkebrun.webp" />}
+        </div>
         <FormCounter />
         <button>Tilføj til kurv</button>
 
@@ -108,6 +118,11 @@ console.log(myData);
     flex-direction: column;
     gap: var(--spacing_7);
     margin-top: var(--spacing_8);
+  }
+
+  .colors {
+    display: flex;
+    gap: var(--spacing_4);
   }
 
   .collection {
