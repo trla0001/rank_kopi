@@ -1,5 +1,5 @@
 ---
-import Basket from "./Basket.astro";
+import Color from "./Color.astro";
 
 const { link, img, name, collection, price, price_old } = Astro.props;
 ---
@@ -9,7 +9,12 @@ const { link, img, name, collection, price, price_old } = Astro.props;
     <img src=`/img/webp/products/${img}` alt="Produkt billede" />
     <div class="info">
       <div class="graphics">
-        <Basket>Color</Basket>
+        <div class="colors">
+          <Color type="card" img="hvid.webp" />
+          <Color type="card" img="raa_rust.webp" />
+          <Color type="card" img="gron.webp" />
+          <Color type="card" img="graagraa.webp" />
+        </div>
         <button> </button>
       </div>
       <div class="text">
@@ -63,6 +68,11 @@ const { link, img, name, collection, price, price_old } = Astro.props;
   .graphics {
     display: flex;
     justify-content: space-between;
+  }
+
+  .colors {
+    display: flex;
+    gap: var(--spacing_2);
   }
 
   .text {
