@@ -24,7 +24,8 @@ const { data } = Astro.props;
       </p>
     </div>
 
-    <p class="flag sold">udsolgt</p>
+    <p class=`hide flag ${data.discount}`>Udsalg</p>
+    <p class=`hide flag ${data.sold_out}`>Udsalg</p>
   </article>
 </a>
 
@@ -75,7 +76,11 @@ const { data } = Astro.props;
   .text span {
     margin-right: var(--spacing_4);
   }
+  .hide {
+    display: none;
+  }
 
+  /* FLAG */
   .flag {
     position: absolute;
     z-index: 10;
@@ -90,7 +95,11 @@ const { data } = Astro.props;
     right: 0;
   }
 
+  .discount {
+    display: block;
+  }
   .sold {
+    display: block;
     background-color: var(--accent_800);
   }
 

@@ -40,7 +40,7 @@ console.log(myData);
   <div class="layout">
     <div class="product">
       <section class="image">
-        <img src="/img/webp/tester.webp" alt="" />
+        <img src=`/img/webp/products/${myData.img}` alt="" />
       </section>
       <section class="info">
         <p class="collection">{myData.collection}</p>
@@ -75,10 +75,10 @@ console.log(myData);
     <section class="related">
       <h2>Relaterede produkter</h2>
       <div class="placeholder">
-        <CardProductStatic link="" img="stabel-stor-urtepotte.webp" name="Stor Urtepotte" collection="Stabel" price="" price_old="" />
-        <CardProductStatic link="" img="colours-kagetallerken.webp" name="Kagetallerken" collection="Colours" price="" price_old="" />
-        <CardProductStatic link="" img="colours-middagstallerken.webp" name="Middagstallerken" collection="Colours" price="" price_old="" />
-        <CardProductStatic link="" img="colours-kop-25cl.webp" name="Kop 25 cl" collection="Colours" price="" price_old="" />
+        <CardProductStatic link="stabel-stor-urtepotte" img="stabel-stor-urtepotte.webp" name="Stor Urtepotte" collection="Stabel" price="800" />
+        <CardProductStatic link="olours-kagetallerken" img="colours-kagetallerken.webp" name="Kagetallerken" collection="Colours" price="280" />
+        <CardProductStatic link="colours-middagstallerken" img="colours-middagstallerken.webp" name="Middagstallerken" collection="Colours" price="550" />
+        <CardProductStatic link="colours-kop-25cl" img="colours-kop-25cl.webp" name="Kop 25 cl" collection="Colours" price="350" />
       </div>
       <div class="button">
         <Button type="secondary" link="/products">Se flere</Button>

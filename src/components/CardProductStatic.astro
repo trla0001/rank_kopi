@@ -4,7 +4,7 @@ import Basket from "./Basket.astro";
 const { link, img, name, collection, price, price_old } = Astro.props;
 ---
 
-<a href={`/single/${link}`}>
+<a href={`/product/${link}`}>
   <article>
     <img src=`/img/webp/products/${img}` alt="Produkt billede" />
     <div class="info">
@@ -17,13 +17,13 @@ const { link, img, name, collection, price, price_old } = Astro.props;
         <p><span class="dot">&#8226;</span>{collection}</p>
       </div>
       <p>
-        <span class="price price_sale">{price}</span>
-        <span class="price_kr price_sale"> kr</span>
-        <span class="price_old">{price_old}</span><span class="price_old_kr"> kr</span>
+        <span class="price">{price}</span>
+        <span class="price_kr"> kr</span>
+        <div class="hide"><span class="price_old">{price_old}</span><span class="price_old_kr"> kr</span></div>
       </p>
     </div>
 
-    <p class="flag sold">udsolgt</p>
+    <p class="flag hide">udsolgt</p>
   </article>
 </a>
 
@@ -117,5 +117,9 @@ const { link, img, name, collection, price, price_old } = Astro.props;
     background: url(/img/svg/shopping_bag-light.svg), var(--accent_600);
     background-repeat: no-repeat;
     background-position: center;
+  }
+
+  .hide {
+    display: none;
   }
 </style>
