@@ -9,7 +9,7 @@ import CardCollection from "../components/CardCollection.astro";
 ---
 
 <MainLayouts title="Forside">
-  <Hero img="hero.webp" heading="Lars Rank" button="" button_txt="Køb nu">
+  <Hero img="hero_desk.webp" heading="Lars Rank" button="" button_txt="Køb nu">
     <p>Håndlavet keramik med et personligt og unikt udtryk. Lavet med funktionalitet for øje.</p>
   </Hero>
   <section>
@@ -17,7 +17,14 @@ import CardCollection from "../components/CardCollection.astro";
     <Carrousel />
   </section>
   <section class="background collections">
-    <CardCollection />
+    <h2 class="light">Kollektioner</h2>
+    <CardCollection img="bluehills.webp" collection="Blue Hills" />
+    <div class="flex_end">
+      <CardCollection img="colours.webp" collection="Colours" />
+    </div>
+    <div class="flex_center">
+      <CardCollection img="vaser.webp" collection="Stabel Serien" />
+    </div>
   </section>
   <section class="about">
     <div class="place">
@@ -27,10 +34,10 @@ import CardCollection from "../components/CardCollection.astro";
     <img src="/img/webp/lars_working.webp" alt="" />
   </section>
   <section class="background some">
+    <InstagramGrid />
     <div class="place">
       <Text color="light" heading="Følg med"><p class="light">Følg min kreative rejse på Instagram, og få et indblik i mit keramiske univers. Her kan du følge med i udviklingen af nye produkter, se processen bag og deltage i konkurrencer.</p></Text>
     </div>
-    <InstagramGrid />
   </section>
 </MainLayouts>
 
@@ -57,6 +64,17 @@ import CardCollection from "../components/CardCollection.astro";
     flex-direction: column;
     gap: var(--spacing_6);
   }
+
+  .flex_end {
+    display: flex;
+    justify-content: end;
+  }
+
+  .flex_center {
+    display: flex;
+    justify-content: center;
+  }
+
   /* OM RANK SECTION */
   .about {
     display: flex;
@@ -78,6 +96,10 @@ import CardCollection from "../components/CardCollection.astro";
     /* GENERAL SECTION */
     section {
       padding: 50px 160px;
+    }
+
+    .collections {
+      padding: 50px 15%;
     }
 
     /* CARROUSEL SECTION */
