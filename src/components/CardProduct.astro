@@ -18,14 +18,14 @@ const { data } = Astro.props;
         <p><span class="dot">&#8226;</span>{data.collection}</p>
       </div>
       <p>
-        <span class="price price_sale">XXX</span>
-        <span class="price_kr price_sale"> kr</span>
-        <span class="price_old">XXXX</span><span class="price_old_kr"> kr</span>
+        <span class="price">{data.price}</span>
+        <span class="price_kr"> kr</span>
+        <!-- <span class="price_old">XXXX</span><span class="price_old_kr"> kr</span> -->
       </p>
     </div>
+    {data.price_old && <p class="flag discount">Udsalg</p>}
 
-    <p class=`hide flag ${data.discount}`>Udsalg</p>
-    <p class=`hide flag ${data.sold_out}`>Udsalg</p>
+    <!-- <p class="flag sold">Udsolgt</p> -->
   </article>
 </a>
 
@@ -49,7 +49,7 @@ const { data } = Astro.props;
     position: relative;
     display: flex;
     flex-direction: column;
-    max-width: 280px;
+    /* max-width: 280px; */
   }
 
   img {
@@ -91,7 +91,7 @@ const { data } = Astro.props;
     text-transform: uppercase;
 
     padding: var(--spacing_3) var(--spacing_3) var(--spacing_3) var(--spacing_6);
-    top: var(--spacing_4);
+    top: var(--spacing_8);
     right: 0;
   }
 
