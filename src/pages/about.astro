@@ -1,0 +1,114 @@
+---
+import Grid from "../components/Grid.astro";
+import MainLayouts from "../layouts/MainLayouts.astro";
+import Hero from "../components/Hero.astro";
+import Text from "../components/Text.astro";
+import InstagramGrid from "../components/InstagramGrid.astro";
+---
+
+<MainLayouts>
+  <Hero img="lars.webp" heading="Lars Rank" button="hide" button_txt="" />
+  <section class="about">
+    <Text color="dark" heading="Keramikkeren bag">
+      <p>Mine keramiske designs er forankret i den skandinaviske designtradition, og er kendetegnet ved rene, enkle former med en dekoration som overrasker. Design processen er et samspil mellem det keramiske materiale og ideen.</p>
+      <p>Jeg har en baggrund som uddannet billedkunstner på Det Jyske Kunstakademi i 2001, og arbejdede i en del år i et krydsfelt mellem kunst og design, hvor keramikken havde en central rolle.</p>
+      <p>
+        Efter et 4. måneds ophold i Japan i 2005, fik den japanske tilgang dog en stor rolle i min designproces. Det japanske keramik er umiddelbart, hvor små fejl fremhæves, og hvert enkelt produkt er unikt og bliver sit eget. Dette afspejler sig i mine produkter i dag, hvor små variationer gør
+        alle produkter unikke.
+      </p>
+    </Text>
+    <img src="/img/webp/lars_working.webp" alt="" />
+  </section>
+  <section class="dark grid">
+    <h2>Metoder og materialer</h2>
+    <Grid />
+  </section>
+  <section class="contact">
+    <Text color="dark" heading="Kontakt">
+      <p>Ønsker at du at kontakte mig, skal du være velkommen til at besøge min butik og værksted, på Christianshavn. Du kan også blot kontakte mig på telefon eller mail.</p>
+      <div>
+        <h4>Mail</h4>
+        <p>lars@rank.dk</p>
+      </div>
+      <div>
+        <h4>Telefon</h4>
+        <p>+45 6177 3993</p>
+      </div>
+      <div>
+        <h4>Adresse</h4>
+        <p>MADE HERE<br /> Wildersgade 23A <br />DK1408 København K</p>
+      </div>
+    </Text>
+    <img src="/img/webp/lars_working.webp" alt="" />
+  </section>
+  <section class="dark some">
+    <div class="place order">
+      <Text color="light" heading="Følg med"><p class="light">Følg min kreative rejse på Instagram, og få et indblik i mit keramiske univers. Her kan du følge med i udviklingen af nye produkter, se processen bag og deltage i konkurrencer.</p></Text>
+    </div>
+    <InstagramGrid />
+  </section>
+</MainLayouts>
+
+<style>
+  /* Color styling */
+  .light {
+    color: var(--primary_100);
+  }
+  /* GENERAL SECTION */
+  section {
+    padding: var(--spacing_9) var(--spacing_5);
+  }
+
+  .dark {
+    padding: var(--spacing_9) var(--spacing_5);
+    background-color: var(--accent_800);
+  }
+
+  .dark h2 {
+    color: var(--primary_100);
+  }
+
+  /* OM RANK SECTION */
+  .about,
+  .contact,
+  .some {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing_12);
+  }
+
+  .about img {
+    border-radius: var(--radius_m);
+  }
+
+  /* GRID SECTION */
+  .grid {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing_9);
+  }
+
+  @media (min-width: 800px) {
+    /* GENERAL SECTION */
+    section,
+    .dark {
+      padding: var(--spacing_12) var(--spacing_13);
+    }
+
+    /* .about {
+      flex-direction: row;
+      gap: var(--spacing_6);
+    } */
+
+    .about,
+    .contact,
+    .some {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .order {
+      order: 2;
+    }
+  }
+</style>
