@@ -3,20 +3,40 @@ import Basket from "./Basket.astro";
 ---
 
 <article>
-  <img src="/img/svg/search.svg" alt="icon" />
-  <img src="/img/svg/language.svg" alt="icon" />
+  <div class="search"></div>
+  <div class="language"></div>
 </article>
 
 <style>
   article {
     display: flex;
-    gap: var(--spacing_5);
+    gap: var(--spacing_2);
     padding: 0 var(--spacing_5);
   }
-  img {
-    width: 24px;
+  .search {
+    height: 36px;
+    width: 36px;
+    background: url(/img/svg/search.svg);
+    background-repeat: no-repeat;
+    border-radius: var(--radius_max);
+    background-position: center;
   }
-  div {
-    display: none;
+  .search:hover {
+    background: url(/img/svg/search-light.svg), var(--accent_600);
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+  .language {
+    height: 36px;
+    width: 36px;
+    background: url(/img/svg/language.svg);
+    background-repeat: no-repeat;
+    border-radius: var(--radius_max);
+    background-position: center;
+  }
+  .language:hover {
+    background: url(/img/svg/language-light.svg), var(--accent_600);
+    background-repeat: no-repeat;
+    background-position: center;
   }
 </style>

@@ -1,22 +1,24 @@
 ---
-const { type, title } = Astro.props;
+import Accordion from "./Accordion.astro";
+
+const { type, img, title } = Astro.props;
 ---
 
 <details class={type}>
-  <summary>{title}</summary>
+  <summary>
+    <p class="heading">{title}</p>
+  </summary>
   <article>
     <slot />
   </article>
 </details>
 
 <style>
-  /***** Header Accordion ******/
-  .header {
-  }
-
-  /* Filter detail margin */
-  .filter {
-    border-top: var(--spacing_1) solid var(--secondary_200);
+  details {
+    background-color: var(--primary_100);
+    padding: var(--spacing_2) 0 var(--spacing_4) var(--spacing_2);
+    width: 100%;
+    height: fit-content;
   }
 
   /* Summary styling and placement */
@@ -26,20 +28,17 @@ const { type, title } = Astro.props;
     align-items: center;
     font-family: var(--font_body);
     font-size: 1rem;
-    text-transform: uppercase;
     color: var(--secondary_500);
-    padding: var(--spacing_4) var(--spacing_3);
+    padding: 0 var(--spacing_4);
     cursor: pointer;
   }
-
-  /* Footer summary */
-  .footer summary {
-    border-bottom: var(--spacing_1) solid var(--secondary_200);
+  .heading {
+    text-transform: uppercase;
   }
 
   /* article padding */
   article {
-    padding: var(--spacing_3) var(--spacing_3) var(--spacing_6);
+    padding: var(--spacing_4) 0 0 var(--spacing_4);
   }
 
   /* Arrow icon */

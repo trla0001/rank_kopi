@@ -29,6 +29,7 @@ const { link, img, name, collection, price, price_old } = Astro.props;
 
 <style>
   a {
+    background-color: var(--primary_200);
     text-decoration: none;
     border-radius: var(--radius_m);
     box-shadow:
@@ -55,8 +56,6 @@ const { link, img, name, collection, price, price_old } = Astro.props;
     display: flex;
     flex-direction: column;
     gap: var(--spacing_3);
-
-    background-color: var(--primary_200);
     padding: var(--spacing_4);
     border-radius: 0 0 var(--radius_m) var(--radius_m);
   }

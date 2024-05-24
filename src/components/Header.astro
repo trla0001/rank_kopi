@@ -1,30 +1,115 @@
 ---
 import Link from "../components/Link.astro";
+import Accordion from "./Accordion.astro";
 import Basket from "./Basket.astro";
+import Ui from "./Ui.astro";
+import SubMenu from "./SubMenu.astro";
 ---
 
 <header>
-  <a href="/">
-    <img class="logo" src="/svg/header_logo.svg" alt="logo" />
-  </a>
   <nav>
+    <a href="/">
+      <img class="logo" src="/img/svg/logo.svg" alt="logo" />
+    </a>
     <ul class="menu">
-      <li><Link link="/products" variant="main">Produkter</Link></li>
-      <li><Link link="/#" variant="main">Kurser</Link></li>
-      <li><Link link="/#" variant="main">Butikken</Link></li>
-      <li><Link link="/about" variant="main">Om Rank</Link></li>
+      <li class="desktop"><p class="overlay-trigger">Produkter</p></li>
+      <!-- <li><Link link="/products" variant="main" label="Produkter" /></li> -->
+      <li class="mobile">
+        <SubMenu type="nav" title="Produkter">
+          <SubMenu type="nav" title="Bordæning">
+            <p>Hejsa</p>
+            <p>Hejsa</p>
+            <p>Hejsa</p>
+          </SubMenu>
+          <SubMenu title="Interiør">
+            <p>Davs</p>
+            <p>Davs</p>
+          </SubMenu>
+          <SubMenu title="Pynt">
+            <p>Ophæng</p>
+          </SubMenu>
+          <SubMenu title="Smykker">
+            <p>Armbånd</p>
+            <p>Halskæder</p>
+            <p>Ørestikker</p>
+          </SubMenu>
+          <SubMenu title="Kollektioner">
+            <p>Colours</p>
+            <p>Dots Smykker</p>
+            <p>Stabel</p>
+            <p>You Little Teapot</p>
+          </SubMenu>
+          <p>Nyheder</p>
+          <p>Udsalg</p>
+          <p>Alle Produkter</p>
+          <p>Gavekort</p>
+        </SubMenu>
+      </li>
+      <li><Link link="/#" variant="main" label="Kurser" /></li>
+      <li><Link link="/#" variant="main" label="Butikken" /></li>
+      <li><Link link="/about" variant="main" label="Om Rank" /></li>
+      <li class="mobile">
+        <Ui />
+      </li>
     </ul>
-
-    <article>
-      <Basket>4</Basket>
-      <div class="burger">
-        <div class="line"></div>
-        <div class="line"></div>
-        <div class="line"></div>
+  </nav>
+  <article>
+    <Basket>4</Basket>
+    <div class="desktop">
+      <Ui />
+    </div>
+    <div class="burger">
+      <div class="line"></div>
+      <div class="line"></div>
+      <div class="line"></div>
+    </div>
+  </article>
+</header>
+<div class="overlay overlay01 desktop">
+  <div class="overlay-close overlay_box">
+    <article class="submenu">
+      <div class="product_category">
+        <div class="category">
+          <h4>Bordækning</h4>
+          <p>Hejsa</p>
+          <p>Hejsa</p>
+          <p>Hejsa</p>
+        </div>
+        <div class="category">
+          <h4>Interiør</h4>
+          <p>Hejsa</p>
+          <p>Hejsa</p>
+          <p>Hejsa</p>
+        </div>
+        <div class="category">
+          <h4>Pynt</h4>
+          <p>Hejsa</p>
+          <p>Hejsa</p>
+          <p>Hejsa</p>
+        </div>
+        <div class="category">
+          <h4>Smykker</h4>
+          <p>Hejsa</p>
+          <p>Hejsa</p>
+          <p>Hejsa</p>
+        </div>
+      </div>
+      <div class="category">
+        <h4>Kollektioner</h4>
+        <p>Hejsa</p>
+        <p>Hejsa</p>
+        <p>Hejsa</p>
+      </div>
+      <div class="category">
+        <h4>Nyheder</h4>
+        <h4>Udsalg</h4>
+        <h4>Alle Produkter</h4>
+        <h4>Gavekort</h4>
       </div>
     </article>
-  </nav>
-</header>
+    <button class="">Luk</button>
+  </div>
+</div>
 
 <style>
   header {
@@ -32,19 +117,20 @@ import Basket from "./Basket.astro";
     justify-content: space-between;
     align-items: center;
     padding: var(--spacing_4);
-    background-color: var(--primary_100);
+    background-color: var(--primary_300);
     position: sticky;
     top: 0;
     z-index: 500;
   }
 
   .logo {
-    width: 100px;
+    height: 60px;
   }
 
   nav {
     display: flex;
     align-items: center;
+    gap: var(--spacing_4);
   }
 
   article {
@@ -62,17 +148,17 @@ import Basket from "./Basket.astro";
 
   .menu li {
     margin-right: var(--spacing_9);
+    width: 90%;
   }
 
-  .menu li:last-child {
+  /* .menu li:last-child {
     margin-right: 0;
-  }
+    align-self: flex-end;
+    justify-self: flex-end;
+  } */
 
   .menu a {
     display: block;
-    /* padding: var(--spacing_4); */
-    /* color: var(--primary_50); */
-    /* text-decoration: none; */
     transition: color 0.3s;
     text-align: end;
   }
@@ -80,6 +166,57 @@ import Basket from "./Basket.astro";
   .menu a:hover {
     /* color: #f00; */
   }
+
+  /***********************************  OVERLAY  ***********************************/
+  .overlay-trigger {
+    text-decoration: underline;
+  }
+  .overlay-trigger:hover {
+    cursor: pointer;
+  }
+  /*  */
+  .overlay-close {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    position: fixed;
+    z-index: 600;
+    top: 195px;
+    left: 50%;
+    width: 100%;
+    padding: var(--spacing_4);
+    background: var(--primary_300);
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.2s ease-in-out;
+    transform: translate(-50%, -50%);
+  }
+  .overlay-close.is-open {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .overlay-close:hover {
+    cursor: pointer;
+  }
+
+  .submenu {
+    display: flex;
+    justify-content: space-between;
+    padding: var(--spacing_6) var(--spacing_13);
+  }
+  .product_category {
+    display: flex;
+    gap: var(--spacing_12);
+  }
+
+  .category {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing_4);
+  }
+
+  /***********************************  BURGER  ***********************************/
 
   .burger {
     width: 30px;
@@ -98,20 +235,12 @@ import Basket from "./Basket.astro";
   .burger {
     display: none;
   }
-
-  @media (min-width: 800px) {
-    header {
-      padding: var(--spacing_4) var(--spacing_12);
-    }
-    .logo {
-      width: 130px;
-    }
-  }
-
+  /* BURGERMENU MEDIAQUERY */
   @media (max-width: 800px) {
     .menu {
       display: none;
     }
+
     .burger {
       display: block;
     }
@@ -131,9 +260,9 @@ import Basket from "./Basket.astro";
     }
 
     nav.active .menu {
-      background-color: var(--primary_100);
+      background-color: var(--primary_300);
       position: absolute;
-      top: 50px;
+      top: 85px;
       left: 0;
       width: 100%;
       height: 800px;
@@ -141,20 +270,44 @@ import Basket from "./Basket.astro";
       display: flex;
       flex-direction: column;
       align-items: start;
-      gap: var(--spacing_4);
+      /* gap: var(--spacing_4); */
+      padding-top: var(--spacing_4);
     }
 
     nav.active .menu li {
-      margin: 10px 20px;
+      margin: var(--spacing_4);
     }
 
     nav.active .menu a {
       font-size: 24px;
     }
   }
+
+  /***********************************  DESKTOP  ***********************************/
+  .desktop {
+    display: none;
+  }
+
+  /* DESKTOP MEDIAQUERY */
+  @media (min-width: 800px) {
+    .mobile {
+      display: none;
+    }
+    .desktop {
+      display: block;
+    }
+    header {
+      padding: var(--spacing_4) var(--spacing_12);
+    }
+    .logo {
+      width: 130px;
+    }
+  }
 </style>
 
 <script>
+  // Burgermenu
+
   const burger = document.querySelector(".burger");
   const nav = document.querySelector("nav");
   const menu = document.querySelector(".menu");
@@ -169,6 +322,42 @@ import Basket from "./Basket.astro";
     link.addEventListener("click", () => {
       burger.classList.remove("active");
       nav.classList.remove("active");
+    });
+  });
+
+  // Overlay
+  // Originally from https://codepen.io/nxworld/pen/MvJQQy
+  // ChatGPT used for code without jQuery https://chat.openai.com/c/3ef19e1c-9849-4b8e-9d62-bf327aeec5ca
+
+  document.addEventListener("DOMContentLoaded", function () {
+    // Variabeldeklaration
+    var overlays = document.querySelectorAll(".overlay");
+    var overlayTriggers = document.querySelectorAll(".overlay-trigger");
+    var overlayClose = document.querySelectorAll(".overlay-close");
+    var openClass = "is-open";
+
+    // Åbn overlay
+    overlayTriggers.forEach(function (trigger, index) {
+      trigger.addEventListener("click", function () {
+        var num = ("0" + (index + 1)).slice(-2);
+        var overlay = document.querySelector(".overlay" + num);
+        overlay.classList.add(openClass);
+        overlayClose.forEach(function (close) {
+          close.classList.add(openClass);
+        });
+      });
+    });
+
+    // Luk overlay
+    overlayClose.forEach(function (close) {
+      close.addEventListener("click", function () {
+        overlayClose.forEach(function (close) {
+          close.classList.remove(openClass);
+        });
+        overlays.forEach(function (overlay) {
+          overlay.classList.remove(openClass);
+        });
+      });
     });
   });
 </script>

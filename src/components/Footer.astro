@@ -1,22 +1,105 @@
 ---
-
+import Accordion from "./Accordion.astro";
+import FormButton from "./FormButton.astro";
+import FormInput from "./FormInput.astro";
+import Link from "./Link.astro";
 ---
 
 <footer>
-  <div class="social_flex">
-    <p>Følg med</p>
-    <div class="social_icon_flex">
-      <a href="https://www.instagram.com/">
-        <img src="/img/svg/instagram.svg" alt="Instagram Logo" class="icon_social" />
-      </a>
-      <a href="https://www.facebook.com/">
-        <img src="/img/svg/facebook.svg" alt="Facebook Logo" class="icon_social" />
-      </a>
-      <a href="https://www.pinterest.com/">
-        <img src="/img/svg/pinterest.svg" alt="pinterest Logo" class="icon_social" />
-      </a>
-    </div>
-  </div>
+  <section class="mobile">
+    <article>
+      <Accordion type="footer" title="Kontakt">
+        <div class="info">
+          <p>Lars Rank Keramik<br /> Cvr: 29026475</p>
+          <p>+45 6177 3993<br />lars@rank.dk</p>
+        </div>
+      </Accordion>
+      <Accordion type="footer" title="Butik">
+        <div class="info">
+          <p>MADE HERE <br />Wildersgade 23A <br />DK1408 København K.</p>
+          <p>Mandag-fredag: 11-17 <br />Lørdag lige uger: 11-15 <br />Søndag: Lukket</p>
+        </div>
+      </Accordion>
+      <Accordion type="footer" title="Info">
+        <div class="info">
+          <Link>Handelsbetingelser</Link>
+          <Link>Levering og fragt</Link>
+          <Link>Returnering</Link>
+          <Link>E-handel</Link>
+        </div>
+      </Accordion>
+    </article>
+    <article>
+      <p class="heading">Nyhedsbrev</p>
+      <div class="form">
+        <FormInput />
+        <FormButton>Tilmeld</FormButton>
+      </div>
+    </article>
+    <article class="social_flex">
+      <p class="heading">Sociale medier</p>
+
+      <div class="social_icon_flex">
+        <a href="https://www.pinterest.com/">
+          <img src="/img/svg/pinterest.svg" alt="pinterest Logo" class="icon_social" />
+        </a>
+        <a href="https://www.instagram.com/">
+          <img src="/img/svg/instagram.svg" alt="Instagram Logo" class="icon_social" />
+        </a>
+        <a href="https://www.facebook.com/">
+          <img src="/img/svg/facebook.svg" alt="Facebook Logo" class="icon_social" />
+        </a>
+      </div>
+    </article>
+  </section>
+  <section class="desktop">
+    <article>
+      <p class="heading">Kontakt</p>
+      <div class="info">
+        <p>Lars Rank Keramik<br /> Cvr: 29026475</p>
+        <p>+45 6177 3993<br />lars@rank.dk</p>
+      </div>
+    </article>
+    <article>
+      <p class="heading">Butik</p>
+      <div class="info">
+        <p>MADE HERE <br />Wildersgade 23A <br />DK1408 København K.</p>
+        <p>Mandag-fredag: 11-17 <br />Lørdag lige uger: 11-15 <br />Søndag: Lukket</p>
+      </div>
+    </article>
+    <article>
+      <p class="heading">Info</p>
+      <div class="info">
+        <Link type="footer" label="Handelsbetingelser" />
+        <Link type="footer" label="Levering og fragt" />
+        <Link type="footer" label="Returnering" />
+        <Link type="footer" label="E-handel" />
+      </div>
+    </article>
+    <article class="space">
+      <div>
+        <p class="heading">Nyhedsbrev</p>
+        <div class="form">
+          <FormInput />
+          <FormButton>Tilmeld</FormButton>
+        </div>
+      </div>
+      <div>
+        <p class="heading">Sociale medier</p>
+        <div class="social_icon_flex">
+          <a href="https://www.pinterest.com/">
+            <img src="/img/svg/pinterest.svg" alt="pinterest Logo" class="icon" />
+          </a>
+          <a href="https://www.instagram.com/">
+            <img src="/img/svg/instagram.svg" alt="Instagram Logo" class="icon" />
+          </a>
+          <a href="https://www.facebook.com/">
+            <img src="/img/svg/facebook.svg" alt="Facebook Logo" class="icon" />
+          </a>
+        </div>
+      </div>
+    </article>
+  </section>
 </footer>
 
 <style>
@@ -24,8 +107,23 @@
     background-color: var(--primary_100);
     display: flex;
     flex-direction: column;
-    padding: var(--spacing_4);
-    z-index: 400;
+    gap: var(--spacing_8);
+    padding: var(--spacing_4) var(--spacing_4) var(--spacing_8);
+  }
+  .heading {
+    text-transform: uppercase;
+  }
+  /* ACCORDION INDHOLD */
+  .info {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing_4);
+  }
+
+  .form {
+    display: flex;
+    flex-direction: row;
+    gap: var(--spacing_4);
   }
 
   .social_flex {
@@ -39,9 +137,35 @@
     align-items: center;
     justify-items: center;
     gap: var(--spacing_3);
-    margin: var(--spacing_2) 0;
   }
-  .icon_social {
-    width: 24px;
+
+  /*********************** DESKTOP ***********************/
+  .desktop {
+    display: none;
+  }
+  @media (min-width: 800px) {
+    .mobile {
+      display: none;
+    }
+    .desktop {
+      display: flex;
+      justify-content: space-between;
+      padding: var(--spacing_4) var(--spacing_13) var(--spacing_8);
+    }
+
+    .heading {
+      text-transform: uppercase;
+      margin: var(--spacing_4) 0;
+      font-size: 1rem;
+    }
+
+    p {
+      font-size: 0.875rem;
+    }
+    .space {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
   }
 </style>
