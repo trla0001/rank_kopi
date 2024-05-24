@@ -17,7 +17,7 @@ import InstagramGrid from "../components/InstagramGrid.astro";
         alle produkter unikke.
       </p>
     </Text>
-    <img src="/img/webp/lars_working.webp" alt="" />
+    <img src="/img/webp/lars_working.webp" alt="Lars Rank der arbejder" class="order" />
   </section>
   <section class="dark grid">
     <h2>Metoder og materialer</h2>
@@ -42,10 +42,10 @@ import InstagramGrid from "../components/InstagramGrid.astro";
     <img src="/img/webp/lars_working.webp" alt="" />
   </section>
   <section class="dark some">
-    <div class="place order">
-      <Text color="light" heading="Følg med"><p class="light">Følg min kreative rejse på Instagram, og få et indblik i mit keramiske univers. Her kan du følge med i udviklingen af nye produkter, se processen bag og deltage i konkurrencer.</p></Text>
+    <Text color="light" heading="Følg med"><p class="light">Følg min kreative rejse på Instagram, og få et indblik i mit keramiske univers. Her kan du følge med i udviklingen af nye produkter, se processen bag og deltage i konkurrencer.</p></Text>
+    <div class="order">
+      <InstagramGrid />
     </div>
-    <InstagramGrid />
   </section>
 </MainLayouts>
 
@@ -68,7 +68,7 @@ import InstagramGrid from "../components/InstagramGrid.astro";
     color: var(--primary_100);
   }
 
-  /* OM RANK SECTION */
+  /* SECTIONS */
   .about,
   .contact,
   .some {
@@ -76,12 +76,11 @@ import InstagramGrid from "../components/InstagramGrid.astro";
     flex-direction: column;
     gap: var(--spacing_12);
   }
-
   .about img {
     border-radius: var(--radius_m);
   }
 
-  /* GRID SECTION */
+  /* GRID*/
   .grid {
     display: flex;
     flex-direction: column;
@@ -100,15 +99,19 @@ import InstagramGrid from "../components/InstagramGrid.astro";
       gap: var(--spacing_6);
     } */
 
+    .dark h2 {
+      align-self: center;
+    }
     .about,
     .contact,
     .some {
       display: grid;
       grid-template-columns: 1fr 1fr;
+      align-items: center;
     }
 
     .order {
-      order: 2;
+      order: -1;
     }
   }
 </style>
