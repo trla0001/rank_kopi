@@ -24,12 +24,8 @@ const data = await fetch("https://hhmpiztfssfaluwezhgq.supabase.co/rest/v1/rank_
     flex-direction: row;
     align-items: center;
     gap: var(--spacing_4);
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    scrollbar-width: none;
-    -ms-overflow-style: none;
     /* Set a minimum width to ensure horizontal scrolling */
-    min-width: 100%;
+    min-width: 300%;
     /* Allow items to wrap if they exceed container width */
     flex-wrap: nowrap;
     height: 450px;
@@ -37,5 +33,11 @@ const data = await fetch("https://hhmpiztfssfaluwezhgq.supabase.co/rest/v1/rank_
 
   .carousel::-webkit-scrollbar {
     display: none;
+  }
+
+  @media (min-width: 800px) {
+    .carousel {
+      min-width: 100%;
+    }
   }
 </style>

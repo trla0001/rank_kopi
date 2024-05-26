@@ -12,7 +12,7 @@ import CardCollection from "../components/CardCollection.astro";
   <Hero img="hero_desk.webp" heading="Lars Rank" button="" button_txt="Køb nu">
     <p>Håndlavet keramik med et personligt og unikt udtryk. Lavet med funktionalitet for øje.</p>
   </Hero>
-  <section>
+  <section class="carousel">
     <h2>Populære Produkter</h2>
     <Carrousel />
   </section>
@@ -56,6 +56,12 @@ import CardCollection from "../components/CardCollection.astro";
   /* GENERAL SECTION */
   section {
     padding: var(--spacing_9) var(--spacing_5);
+  }
+  .carousel {
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
   }
 
   /* KOLLEKTIONER SECTION */
@@ -121,6 +127,4 @@ import CardCollection from "../components/CardCollection.astro";
       grid-template-columns: 1fr 1fr;
     }
   }
-
-  /* Testing */
 </style>
