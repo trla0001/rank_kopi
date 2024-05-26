@@ -1,9 +1,9 @@
 ---
-const { img, collection } = Astro.props;
+const { img, collection, animation } = Astro.props;
 ---
 
 <a href="#">
-  <article>
+  <article class={animation}>
     <img src=`/img/webp/${img}` alt="Billede af kollektion" />
     <h3>{collection}</h3>
   </article>
@@ -43,6 +43,36 @@ const { img, collection } = Astro.props;
   @media (min-width: 800px) {
     h3 {
       font-size: 3rem;
+    }
+  }
+
+  /********** Scroll Animation in Chrome - (https://youtu.be/UmzFk68Bwdk?si=3ECrMQ-09hs6uGwE) ***********/
+  /* Makes sure it only shows for peoples settings set to no preference */
+  @media (prefers-reduced-motion: no-preference) {
+    .scroll,
+    .scroll_2 {
+      scale: 0.8;
+      opacity: 0;
+      animation: fade-in linear forwards;
+      /* Progress of animation happens in viewport */
+      animation-timeline: view();
+      /* start and end from the bottom of viewport */
+      animation-range: 50px 300px;
+    }
+    @keyframes fade-in {
+      to {
+        scale: 1;
+        opacity: 1;
+        translate: 0 0;
+      }
+    }
+
+    /* Position */
+    .scroll {
+      translate: -100px 0;
+    }
+    .scroll_2 {
+      translate: 100px 0;
     }
   }
 </style>
