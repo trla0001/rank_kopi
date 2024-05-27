@@ -5,6 +5,11 @@ import MainLayouts from "../layouts/MainLayouts.astro";
 import Accordion from "../components/Accordion.astro";
 import Select from "../components/Select.astro";
 import Button from "../components/Button.astro";
+import FilterCategory from "../components/FilterCategory.astro";
+import FilterCollection from "../components/FilterCollection.astro";
+import FilterMaterial from "../components/FilterMaterial.astro";
+import FilterPrice from "../components/FilterPrice.astro";
+import Colorsample from "../components/Colorsample.astro";
 
 // Fetcher data fra databasen og ligger i konstanten 'data'
 const data = await fetch("https://hhmpiztfssfaluwezhgq.supabase.co/rest/v1/rank_keramik", {
@@ -27,10 +32,10 @@ const data = await fetch("https://hhmpiztfssfaluwezhgq.supabase.co/rest/v1/rank_
         <p>Mest relevant</p>
       </Select>
       <Select type="sorting" img="tune.svg" title="filtre">
-        <Accordion type="filter" title="Pris">Noget</Accordion>
-        <Accordion type="filter" title="Farve">Noget</Accordion>
-        <Accordion type="filter" title="Materiale">Noget</Accordion>
-        <Accordion type="filter" title="Kategori">Noget</Accordion>
+        <Accordion type="filter" title="Pris"><FilterPrice /></Accordion>
+        <Accordion type="filter" title="Farve"><Colorsample /></Accordion>
+        <Accordion type="filter" title="Materiale"><FilterMaterial /></Accordion>
+        <Accordion type="filter" title="Kategori"><FilterCategory /></Accordion>
       </Select>
     </div>
 
