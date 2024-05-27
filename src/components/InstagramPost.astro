@@ -3,12 +3,15 @@ const { link, img } = Astro.props;
 ---
 
 <div>
-  <img src=`/img/webp/${img}` alt="Instagram post" />
+  <img class="height" src=`/img/webp/${img}` alt="Instagram post" />
   <img src="/img/svg/instagram-light.svg" class="icon" />
   <a href={link} class="filter"></a>
 </div>
 
 <style>
+  .height {
+    height: 100%;
+  }
   div {
     position: relative;
     padding: 0;
@@ -40,7 +43,7 @@ const { link, img } = Astro.props;
 
   div:hover a {
     position: absolute;
-
+    cursor: pointer;
     background-color: rgba(29, 13, 3, 0.25);
   }
 </style>
