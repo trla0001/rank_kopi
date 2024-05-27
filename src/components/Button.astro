@@ -1,8 +1,8 @@
 ---
-const { type, color, link } = Astro.props;
+const { type, color, link, hide } = Astro.props;
 ---
 
-<a class={"button " + type + " " + color} href={link}><slot /></a>
+<a class={"button " + type + " " + color + " " + hide} href={link}><slot /></a>
 
 <style>
   /********** Basics på udseende **********/
@@ -43,12 +43,14 @@ const { type, color, link } = Astro.props;
   }
 
   .primary:hover {
-    background-color: var(--accent_500);
-    border-color: var(--accent_500);
+    box-shadow:
+      0px 1px 3px rgba(210, 210, 210, 0.8),
+      0px 4px 10px rgba(210, 210, 210, 0.8);
   }
   .secondary:hover {
-    background-color: var(--accent_600);
-    color: var(--primary_50);
+    box-shadow:
+      0px 1px 3px rgba(210, 210, 210, 0.8),
+      0px 4px 10px rgba(210, 210, 210, 0.8);
   }
 
   .secondary:visited {

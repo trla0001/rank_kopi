@@ -131,10 +131,6 @@ a {
   text-decoration: underline;
 }
 
-a:hover {
-  font-weight: 500;
-}
-
 button {
   border: none;
   background-color: transparent;

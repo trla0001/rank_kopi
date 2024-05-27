@@ -2,7 +2,7 @@
 const { variant, link, label } = Astro.props;
 ---
 
-<a href={link} class={variant}><p>{label}</p></a>
+<a href={link} class={variant}>{label}</a>
 
 <style>
   a {
@@ -11,12 +11,30 @@ const { variant, link, label } = Astro.props;
   }
 
   a:hover {
-    cursor: copy;
-    font-weight: 500;
+    cursor: pointer;
+    text-decoration: underline;
   }
   .main {
     font-size: 1.125rem;
     text-transform: uppercase;
+  }
+
+  .special,
+  .special_passive {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+  }
+  .sub {
+    font-size: 1rem;
+  }
+  .sub_passive {
+    font-size: 1rem;
+  }
+  .special_passive,
+  .sub_passive:hover {
+    text-decoration: none;
+    cursor: not-allowed;
   }
 
   .active {

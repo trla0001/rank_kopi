@@ -12,39 +12,47 @@ import SubMenu from "./SubMenu.astro";
       <img class="logo" src="/img/svg/logo.svg" alt="logo" />
     </a>
     <ul class="menu">
-      <li class="desktop"><p class="overlay-trigger">Produkter</p></li>
+      <li class="desktop overlay-trigger"><Link link="/#" variant="main" label="Produkter" /></li>
       <!-- <li><Link link="/products" variant="main" label="Produkter" /></li> -->
       <li class="mobile">
         <SubMenu type="nav" title="Produkter">
           <SubMenu type="nav" title="Bordæning">
-            <p>Hejsa</p>
-            <p>Hejsa</p>
-            <p>Hejsa</p>
+            <Link link="/#" variant="sub" label="Fade" />
+            <Link link="/categories/kopper" variant="sub" label="Krus og kopper" />
+            <Link link="/categories/kander" variant="sub" label="Kander" />
+            <Link link="/#" variant="sub" label="Skåle" />
+            <Link link="/categories/tallerkner" variant="sub" label="Tallerkner" />
           </SubMenu>
           <SubMenu title="Interiør">
-            <p>Davs</p>
-            <p>Davs</p>
+            <Link link="/#" variant="sub" label="Fyrfadsstager" />
+            <Link link="/#" variant="sub" label="Lamper" />
+            <Link link="/#" variant="sub" label="Lysestager" />
+            <Link link="/categories/urtepotter" variant="sub" label="Urtepotter" />
+            <Link link="/categories/vaser" variant="sub" label="Vaser" />
           </SubMenu>
           <SubMenu title="Pynt">
-            <p>Ophæng</p>
+            <Link link="/#" variant="sub_passive" label="Ophæng" />
           </SubMenu>
           <SubMenu title="Smykker">
-            <p>Armbånd</p>
-            <p>Halskæder</p>
-            <p>Ørestikker</p>
+            <Link link="/#" variant="sub_passive" label="Armbånd" />
+            <Link link="/#" variant="sub_passive" label="Halskæder" />
+            <Link link="/#" variant="sub_passive" label="Ørestikker" />
           </SubMenu>
           <SubMenu title="Kollektioner">
-            <p>Colours</p>
-            <p>Dots Smykker</p>
-            <p>Stabel</p>
-            <p>You Little Teapot</p>
+            <Link link="/collection/colours" variant="sub_passive" label="Colours" />
+            <Link link="/#" variant="sub_passive" label="Dots Smykker" />
+            <Link link="/collection/stabel" variant="sub_passive" label="Stabel" />
+            <Link link="/#" variant="sub_passive" label="You Little Teapot" />
           </SubMenu>
-          <p>Nyheder</p>
-          <p>Udsalg</p>
-          <p>Alle Produkter</p>
-          <p>Gavekort</p>
+          <div class="others">
+            <Link link="/#" variant="main" label="Nyheder" />
+            <Link link="/#" variant="main" label="Udsalg" />
+            <Link link="/products" variant="main" label="Alle Produkter" />
+            <Link link="/#" variant="main" label="Gavekort" />
+          </div>
         </SubMenu>
       </li>
+
       <li><Link link="/#" variant="main" label="Kurser" /></li>
       <li><Link link="/#" variant="main" label="Butikken" /></li>
       <li><Link link="/about" variant="main" label="Om Rank" /></li>
@@ -71,40 +79,43 @@ import SubMenu from "./SubMenu.astro";
       <div class="product_category">
         <div class="category">
           <h4>Bordækning</h4>
-          <p>Hejsa</p>
-          <p>Hejsa</p>
-          <p>Hejsa</p>
+          <Link link="/#" variant="sub" label="Fade" />
+          <Link link="/categories/kopper" variant="sub" label="Krus og kopper" />
+          <Link link="/categories/kander" variant="sub" label="Kander" />
+          <Link link="/#" variant="sub" label="Skåle" />
+          <Link link="/categories/tallerkner" variant="sub" label="Tallerkner" />
         </div>
         <div class="category">
           <h4>Interiør</h4>
-          <p>Hejsa</p>
-          <p>Hejsa</p>
-          <p>Hejsa</p>
+          <Link link="/#" variant="sub" label="Fyrfadsstager" />
+          <Link link="/#" variant="sub" label="Lamper" />
+          <Link link="/#" variant="sub" label="Lysestager" />
+          <Link link="/categories/urtepotter" variant="sub" label="Urtepotter" />
+          <Link link="/categories/vaser" variant="sub" label="Vaser" />
         </div>
         <div class="category">
           <h4>Pynt</h4>
-          <p>Hejsa</p>
-          <p>Hejsa</p>
-          <p>Hejsa</p>
+          <Link link="/#" variant="sub_passive" label="Ophæng" />
         </div>
         <div class="category">
           <h4>Smykker</h4>
-          <p>Hejsa</p>
-          <p>Hejsa</p>
-          <p>Hejsa</p>
+          <Link link="/#" variant="sub_passive" label="Armbånd" />
+          <Link link="/#" variant="sub_passive" label="Halskæder" />
+          <Link link="/#" variant="sub_passive" label="Ørestikker" />
         </div>
       </div>
       <div class="category">
         <h4>Kollektioner</h4>
-        <p>Hejsa</p>
-        <p>Hejsa</p>
-        <p>Hejsa</p>
+        <Link link="/collection/colours" variant="sub_passive" label="Colours" />
+        <Link link="/#" variant="sub_passive" label="Dots Smykker" />
+        <Link link="/collection/stabel" variant="sub_passive" label="Stabel" />
+        <Link link="/#" variant="sub_passive" label="You Little Teapot" />
       </div>
       <div class="category">
-        <h4>Nyheder</h4>
-        <h4>Udsalg</h4>
-        <h4>Alle Produkter</h4>
-        <h4>Gavekort</h4>
+        <Link link="/#" variant="special" label="Nyheder" />
+        <Link link="/#" variant="special" label="Udsalg" />
+        <Link link="/products" variant="special" label="Alle Produkter" />
+        <Link link="/#" variant="special_passive" label="Gavekort" />
       </div>
     </article>
     <button class="">Luk</button>
@@ -148,7 +159,7 @@ import SubMenu from "./SubMenu.astro";
 
   .menu li {
     margin-right: var(--spacing_9);
-    width: 90%;
+    white-space: nowrap;
   }
 
   /* .menu li:last-child {
@@ -167,9 +178,16 @@ import SubMenu from "./SubMenu.astro";
     /* color: #f00; */
   }
 
+  .others {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing_6);
+  }
+
   /***********************************  OVERLAY  ***********************************/
   .overlay-trigger {
-    text-decoration: underline;
+    font-size: 1.125rem;
+    text-transform: uppercase;
   }
   .overlay-trigger:hover {
     cursor: pointer;
@@ -180,8 +198,8 @@ import SubMenu from "./SubMenu.astro";
     flex-direction: column;
     gap: 1rem;
     position: fixed;
-    z-index: 600;
-    top: 195px;
+    z-index: 400;
+    top: 205px;
     left: 50%;
     width: 100%;
     padding: var(--spacing_4);
@@ -203,6 +221,7 @@ import SubMenu from "./SubMenu.astro";
   .submenu {
     display: flex;
     justify-content: space-between;
+    align-items: start;
     padding: var(--spacing_6) var(--spacing_13);
   }
   .product_category {

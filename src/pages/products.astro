@@ -4,6 +4,7 @@ import Hero from "../components/Hero.astro";
 import MainLayouts from "../layouts/MainLayouts.astro";
 import Accordion from "../components/Accordion.astro";
 import Select from "../components/Select.astro";
+import Button from "../components/Button.astro";
 
 // Fetcher data fra databasen og ligger i konstanten 'data'
 const data = await fetch("https://hhmpiztfssfaluwezhgq.supabase.co/rest/v1/rank_keramik", {
@@ -33,15 +34,16 @@ const data = await fetch("https://hhmpiztfssfaluwezhgq.supabase.co/rest/v1/rank_
       </Select>
     </div>
 
-    <div class="products">
-      {
-        data.map((product, i) => {
-          return <CardProduct data={product} />;
-        })
-      }
+    <article>
+      <div class="products">
+        {
+          data.map((product, i) => {
+            return <CardProduct data={product} />;
+          })
+        }
 
-      <!-- Herter dataen for hvert element som er lig eller over 6, og laver et CardProduct med den, som ligger i en div, som ikke kan ses (pga class 'hide') -->
-      <!-- <div class="extra hide">
+        <!-- Herter dataen for hvert element som er lig eller over 6, og laver et CardProduct med den, som ligger i en div, som ikke kan ses (pga class 'hide') -->
+        <!-- <div class="extra hide">
         {
           data.map((product, i) => {
             if (i >= 8) {
@@ -50,44 +52,53 @@ const data = await fetch("https://hhmpiztfssfaluwezhgq.supabase.co/rest/v1/rank_
           })
         }
       </div> -->
-    </div>
-  </section>
+      </div>
+      <Button type="secondary" link="#">Indlæs flere</Button>
+    </article>
 
-  <style>
-    section {
-      display: flex;
-      flex-direction: column;
-      gap: var(--spacing_5);
-      margin: var(--spacing_6);
-    }
-
-    .menu {
-      display: flex;
-
-      gap: var(--spacing_4);
-    }
-
-    .products {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-      gap: var(--spacing_5);
-    }
-
-    @media (min-width: 800px) {
-      .menu {
-        flex-direction: column;
-      }
-
+    <style>
       section {
-        display: grid;
-        grid-template-columns: 1fr 3fr;
-        margin: 0 var(--spacing_13);
+        display: flex;
+        flex-direction: column;
+        gap: var(--spacing_5);
+        margin: var(--spacing_6);
       }
-      .products {
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+
+      article {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
         gap: var(--spacing_5);
       }
-    }
-  </style>
+
+      .menu {
+        display: flex;
+
+        gap: var(--spacing_4);
+      }
+
+      .products {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+        gap: var(--spacing_5);
+      }
+
+      @media (min-width: 800px) {
+        .menu {
+          flex-direction: column;
+        }
+
+        section {
+          display: grid;
+          grid-template-columns: 1fr 3fr;
+          margin: 0 var(--spacing_13);
+        }
+        .products {
+          display: grid;
+          grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+          gap: var(--spacing_5);
+        }
+      }
+    </style>
+  </section>
 </MainLayouts>
