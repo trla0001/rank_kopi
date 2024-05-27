@@ -12,26 +12,31 @@ import SubMenu from "./SubMenu.astro";
       <img class="logo" src="/img/svg/logo.svg" alt="logo" />
     </a>
     <ul class="menu">
-      <li class="desktop"><p class="overlay-trigger">Produkter</p></li>
+      <li class="desktop overlay-trigger"><Link link="/#" variant="main" label="Produkter" /></li>
       <!-- <li><Link link="/products" variant="main" label="Produkter" /></li> -->
       <li class="mobile">
         <SubMenu type="nav" title="Produkter">
           <SubMenu type="nav" title="Bordæning">
-            <p>Hejsa</p>
-            <p>Hejsa</p>
-            <p>Hejsa</p>
+            <Link link="/#" variant="sub" label="Fade" />
+            <Link link="/#" variant="sub" label="Krus og kopper" />
+            <Link link="/#" variant="sub" label="Kander" />
+            <Link link="/#" variant="sub" label="Skåle" />
+            <Link link="/#" variant="sub" label="Tallerkner" />
           </SubMenu>
           <SubMenu title="Interiør">
-            <p>Davs</p>
-            <p>Davs</p>
+            <Link link="/#" variant="sub" label="Fyrfadsstager" />
+            <Link link="/#" variant="sub" label="Lamper" />
+            <Link link="/#" variant="sub" label="Lysestager" />
+            <Link link="/#" variant="sub" label="Urtepotter" />
+            <Link link="/#" variant="sub" label="Vaser" />
           </SubMenu>
           <SubMenu title="Pynt">
-            <p>Ophæng</p>
+            <Link link="/#" variant="sub_passive" label="Ophæng" />
           </SubMenu>
           <SubMenu title="Smykker">
-            <p>Armbånd</p>
-            <p>Halskæder</p>
-            <p>Ørestikker</p>
+            <Link link="/#" variant="sub_passive" label="Armbånd" />
+            <Link link="/#" variant="sub_passive" label="Halskæder" />
+            <Link link="/#" variant="sub_passive" label="Ørestikker" />
           </SubMenu>
           <SubMenu title="Kollektioner">
             <p>Colours</p>
@@ -148,7 +153,7 @@ import SubMenu from "./SubMenu.astro";
 
   .menu li {
     margin-right: var(--spacing_9);
-    width: 90%;
+    white-space: nowrap;
   }
 
   /* .menu li:last-child {
