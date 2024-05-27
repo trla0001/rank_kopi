@@ -1,0 +1,37 @@
+---
+const { img, img_1, img_2, img_3 } = Astro.props;
+---
+
+<article>
+  <div class="">
+    <img src=`/img/webp/products/${img_1}` class="img_1" />
+    <!-- <img src=`/img/webp/products/${img_2}` class="img_2" /> -->
+  </div>
+  <img src=`/img/webp/products/${img}` alt="Produkt billede" class="main" />
+</article>
+
+<style>
+  article {
+    display: grid;
+    grid-template-columns: 0.95fr 3fr;
+    gap: var(--spacing_4);
+  }
+
+  div {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing_4);
+    grid-column: 1 / span 1;
+  }
+
+  .main {
+    grid-column: 2 / span 1;
+  }
+
+  .hide {
+    display: none;
+  }
+  img {
+    border-radius: var(--radius_m);
+  }
+</style>

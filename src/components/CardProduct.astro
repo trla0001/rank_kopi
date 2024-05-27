@@ -1,6 +1,5 @@
 ---
-import Basket from "./Basket.astro";
-import Colorsample from "./Colorsample.astro";
+import Color from "./Color.astro";
 
 const { data } = Astro.props;
 ---
@@ -10,7 +9,19 @@ const { data } = Astro.props;
     <img src=`/img/webp/products/${data.img}` alt="Produkt billede" />
     <div class="info">
       <div class="graphics">
-        <Colorsample />
+        <div class="colors">
+          {data.hvid && <Color type="card" img="hvid.webp" />}
+          {data.raa_rust && <Color type="card" img="raa_rust.webp" />}
+          {data.gron && <Color type="card" img="gron.webp" />}
+          {data.graagraa && <Color type="card" img="graagraa.webp" />}
+          {data.morkegron && <Color type="card" img="morkegron.webp" />}
+          {data.gul && <Color type="card" img="gul.webp" />}
+          {data.havblaa && <Color type="card" img="havblaa.webp" />}
+          {data.rust && <Color type="card" img="rust.webp" />}
+          {data.sortbrun && <Color type="card" img="sortbrun.webp" />}
+          {data.lyseblaa && <Color type="card" img="lyseblaa.webp" />}
+          {data.mørkebrun && <Color type="card" img="morkebrun.webp" />}
+        </div>
         <button> </button>
       </div>
       <div class="text">
@@ -18,13 +29,14 @@ const { data } = Astro.props;
         <p><span class="dot">&#8226;</span>{data.collection}</p>
       </div>
       <p>
-        <span class="price price_sale">XXX</span>
-        <span class="price_kr price_sale"> kr</span>
-        <span class="price_old">XXXX</span><span class="price_old_kr"> kr</span>
+        <span class="price">{data.price}</span>
+        <span class="price_kr"> kr</span>
+        <!-- <span class="price_old">XXXX</span><span class="price_old_kr"> kr</span> -->
       </p>
     </div>
+    {data.price_old && <p class="flag discount">Udsalg</p>}
 
-    <p class="flag sold">udsolgt</p>
+    <!-- <p class="flag sold">Udsolgt</p> -->
   </article>
 </a>
 
@@ -48,7 +60,7 @@ const { data } = Astro.props;
     position: relative;
     display: flex;
     flex-direction: column;
-    max-width: 280px;
+    /* max-width: 280px; */
   }
 
   img {
@@ -67,6 +79,11 @@ const { data } = Astro.props;
     justify-content: space-between;
   }
 
+  .colors {
+    display: flex;
+    gap: var(--spacing_2);
+  }
+
   .text {
     display: flex;
     gap: var(--spacing_4);
@@ -75,7 +92,11 @@ const { data } = Astro.props;
   .text span {
     margin-right: var(--spacing_4);
   }
+  .hide {
+    display: none;
+  }
 
+  /* FLAG */
   .flag {
     position: absolute;
     z-index: 10;
@@ -86,11 +107,15 @@ const { data } = Astro.props;
     text-transform: uppercase;
 
     padding: var(--spacing_3) var(--spacing_3) var(--spacing_3) var(--spacing_6);
-    top: var(--spacing_4);
+    top: var(--spacing_8);
     right: 0;
   }
 
+  .discount {
+    display: block;
+  }
   .sold {
+    display: block;
     background-color: var(--accent_800);
   }
 
