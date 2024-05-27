@@ -12,7 +12,7 @@ import SubMenu from "./SubMenu.astro";
       <img class="logo" src="/img/svg/logo.svg" alt="logo" />
     </a>
     <ul class="menu">
-      <li class="desktop overlay-trigger"><Link link="/#" variant="main" label="Produkter" /></li>
+      <li class="desktop overlay-trigger"><p class="products">Produkter</p></li>
       <!-- <li><Link link="/products" variant="main" label="Produkter" /></li> -->
       <li class="mobile">
         <SubMenu type="nav" title="Produkter">
@@ -155,6 +155,7 @@ import SubMenu from "./SubMenu.astro";
     list-style: none;
     margin: 0;
     padding: 0;
+    align-items: center;
   }
 
   .menu li {
@@ -185,6 +186,11 @@ import SubMenu from "./SubMenu.astro";
   }
 
   /***********************************  OVERLAY  ***********************************/
+  .products {
+    font-size: 1.125rem;
+    text-transform: uppercase;
+    padding:;
+  }
   .overlay-trigger {
     font-size: 1.125rem;
     text-transform: uppercase;
