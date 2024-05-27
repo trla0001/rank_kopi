@@ -3,7 +3,7 @@ const { type, text } = Astro.props;
 ---
 
 <form class={type} netlify>
-  <input type="email" id="email" name="email" placeholder="Indtast din e-mail" required />
+  <input type="email" id="email" name="email" placeholder="Indtast din e-mail" autocomplete="email" required />
   <input type="submit" value={text} class="button" />
 </form>
 
