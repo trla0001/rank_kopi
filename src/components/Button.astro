@@ -1,8 +1,8 @@
 ---
-const { type, color, link } = Astro.props;
+const { type, color, link, hide } = Astro.props;
 ---
 
-<a class={"button " + type + " " + color} href={link}><slot /></a>
+<a class={"button " + type + " " + color + " " + hide} href={link}><slot /></a>
 
 <style>
   /********** Basics på udseende **********/
