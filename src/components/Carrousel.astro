@@ -25,19 +25,27 @@ const data = await fetch("https://hhmpiztfssfaluwezhgq.supabase.co/rest/v1/rank_
     align-items: center;
     gap: var(--spacing_4);
     /* Set a minimum width to ensure horizontal scrolling */
-    min-width: 300%;
+    min-width: 150%;
     /* Allow items to wrap if they exceed container width */
     flex-wrap: nowrap;
-    height: 450px;
+    height: 600px;
   }
 
   .carousel::-webkit-scrollbar {
     display: none;
   }
 
-  @media (min-width: 800px) {
+  @media (min-width: 600px) {
     .carousel {
       min-width: 100%;
+      height: 450px;
+    }
+  }
+
+  @media (min-width: 1000px) {
+    .carousel {
+      min-width: 150%;
+      height: 450px;
     }
   }
 </style>
