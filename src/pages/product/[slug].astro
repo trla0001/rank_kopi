@@ -4,6 +4,7 @@ import Button from "../../components/Button.astro";
 import CardProductStatic from "../../components/CardProductStatic.astro";
 import Color from "../../components/Color.astro";
 import FormCounter from "../../components/FormCounter.astro";
+import Gallery from "../../components/Gallery.astro";
 import SingleLayouts from "../../layouts/SingleLayouts.astro";
 
 // Laver statiske stier til hvert element i databasen
@@ -37,9 +38,10 @@ console.log(myData);
   <Breadcrumbs />
   <div class="layout">
     <div class="product">
-      <section class="image">
+      <Gallery img={myData.img} img_1={myData.img_x[0]} img_2={myData.img_x[1]} />
+      <!-- <section class="image">
         <img src=`/img/webp/products/${myData.img}` alt="" />
-      </section>
+      </section> -->
       <section class="info">
         <p class="collection">{myData.collection}</p>
         <h1 class="name">{myData.name}</h1>
@@ -195,8 +197,8 @@ console.log(myData);
     }
 
     .product {
-      display: flex;
-      flex-direction: row;
+      display: grid;
+      grid-template-columns: 3fr 2fr;
       gap: var(--spacing_11);
     }
 
