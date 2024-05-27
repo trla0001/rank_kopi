@@ -1,23 +1,53 @@
 ---
-
+const { type, text } = Astro.props;
 ---
 
-<form netlify>
+<form class={type} netlify>
   <input type="email" id="email" name="email" placeholder="Indtast din e-mail" required />
+  <input type="submit" value={text} class="button" />
 </form>
 
 <style>
-  input {
+  /* TYPES OF FORMS */
+  .nyhed {
+    display: flex;
+    gap: var(--spacing_3);
+  }
+
+  .udsolgt {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing_3);
+  }
+
+  /* GENEREL STYLING */
+  input,
+  .button {
     font-family: var(--font_body);
     font-size: 1rem;
+    padding: var(--spacing_4) var(--spacing_6);
+    border-radius: var(--radius_max);
+  }
+
+  /* INPUT STYLING */
+  input {
     color: var(--secondary_500);
     background-color: var(--primary_100);
     border: 3px solid var(--primary_600);
-    padding: var(--spacing_4, --spacing_6);
-    border-radius: var(--radius_max);
   }
+
   input:focus {
     border: 3px solid var(--secondary_500);
     outline: none;
+  }
+
+  /* BUTTON STYLING */
+  .button {
+    color: var(--accent_600);
+    border: solid var(--accent_600);
+    cursor: pointer;
+  }
+  .button:hover {
+    background-color: #c8624c;
   }
 </style>
