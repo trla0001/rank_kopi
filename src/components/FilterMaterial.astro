@@ -1,0 +1,52 @@
+---
+
+---
+
+<form>
+  <div>
+    <input type="checkbox" value="Vaser" />
+    <label>Stentøj</label><br />
+  </div>
+  <div>
+    <input type="checkbox" value="Lamper" />
+    <label>Porcelæn</label><br />
+  </div>
+</form>
+
+<style>
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing_3);
+  }
+  div {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing_2);
+  }
+  input[type="checkbox"] {
+    appearance: none;
+    -webkit-appearance: none;
+    padding: 8px;
+    border: 2px solid var(--secondary_300);
+    border-radius: var(--radius_s);
+    cursor: pointer;
+  }
+  input[type="checkbox"]::before {
+    content: "";
+    width: 1rem;
+    height: 1rem;
+    transform: scale(0);
+  }
+
+  input[type="checkbox"]:checked {
+    transform: scale(1);
+    background-color: var(--secondary_300);
+  }
+
+  label {
+    font-family: var(--font_body);
+    color: var(--secondary_500);
+    font-size: 0.8rem;
+  }
+</style>
