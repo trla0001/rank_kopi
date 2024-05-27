@@ -18,13 +18,22 @@ const { variant, link, label } = Astro.props;
     font-size: 1.125rem;
     text-transform: uppercase;
   }
+
+  .special,
+  .special_passive {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+  }
   .sub {
     font-size: 1rem;
   }
   .sub_passive {
     font-size: 1rem;
   }
+  .special_passive,
   .sub_passive:hover {
+    text-decoration: none;
     cursor: not-allowed;
   }
 

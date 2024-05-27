@@ -1,6 +1,4 @@
 ---
-import Accordion from "./Accordion.astro";
-
 const { type, img, title } = Astro.props;
 ---
 
@@ -15,8 +13,8 @@ const { type, img, title } = Astro.props;
 
 <style>
   details {
-    background-color: var(--primary_100);
-    padding: var(--spacing_2) 0 var(--spacing_4) var(--spacing_2);
+    background-color: var(--primary_300);
+    padding: var(--spacing_2) 0 var(--spacing_4);
     width: 100%;
     height: fit-content;
   }
@@ -29,15 +27,18 @@ const { type, img, title } = Astro.props;
     font-family: var(--font_body);
     font-size: 1rem;
     color: var(--secondary_500);
-    padding: 0 var(--spacing_4);
     cursor: pointer;
   }
   .heading {
+    font-size: 1.125rem;
     text-transform: uppercase;
   }
 
   /* article padding */
   article {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing_2);
     padding: var(--spacing_4) 0 0 var(--spacing_4);
   }
 
