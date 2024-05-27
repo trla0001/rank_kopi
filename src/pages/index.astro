@@ -12,9 +12,14 @@ import CardCollection from "../components/CardCollection.astro";
   <Hero img="hero_desk.webp" heading="Lars Rank" button="" button_txt="Køb nu">
     <p>Håndlavet keramik med et personligt og unikt udtryk. Lavet med funktionalitet for øje.</p>
   </Hero>
-  <section class="carousel">
+  <section>
     <h2>Populære Produkter</h2>
-    <Carrousel />
+    <div class="carousel">
+      <Carrousel />
+    </div>
+    <div class="center">
+      <Button type="secondary" link="#">Køb nu</Button>
+    </div>
   </section>
   <section class="background collections">
     <h2 class="light">Kollektioner</h2>
@@ -62,6 +67,12 @@ import CardCollection from "../components/CardCollection.astro";
     scroll-snap-type: x mandatory;
     scrollbar-width: none;
     -ms-overflow-style: none;
+  }
+
+  /* POPULÆRE PRODUKTER */
+  .center {
+    display: flex;
+    justify-content: center;
   }
 
   /* KOLLEKTIONER SECTION */
