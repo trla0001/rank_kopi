@@ -1,10 +1,10 @@
 ---
 import CardProduct from "../components/CardProduct.astro";
 
-const { category, type } = Astro.props;
+const { column, type } = Astro.props;
 
 // Fetcher data fra databasen og ligger i konstanten 'data'
-const url = `https://hhmpiztfssfaluwezhgq.supabase.co/rest/v1/rank_keramik?${type}=eq.${category}`;
+const url = `https://hhmpiztfssfaluwezhgq.supabase.co/rest/v1/rank_keramik?${column}=eq.${type}`;
 
 const data = await fetch(url, {
   method: "GET",
