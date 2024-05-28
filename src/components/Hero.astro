@@ -9,7 +9,7 @@ const { img, heading, button, button_txt, side } = Astro.props;
   <article class={side}>
     <h1>{heading}</h1>
     <slot />
-    <div class={button}>
+    <div class=`top ${button}`>
       <Button type="primary" link="/products">{button_txt}</Button>
     </div>
   </article>
@@ -20,7 +20,7 @@ const { img, heading, button, button_txt, side } = Astro.props;
     display: flex;
     flex-direction: column;
     gap: var(--spacing_5);
-    margin: 0 0 var(--spacing_9);
+    /* margin: 0 0 var(--spacing_9); */
   }
 
   article {
@@ -28,6 +28,10 @@ const { img, heading, button, button_txt, side } = Astro.props;
     flex-direction: column;
     gap: var(--spacing_5);
     padding: var(--spacing_5);
+  }
+
+  .top {
+    margin-top: var(--spacing_2);
   }
 
   @media (min-width: 800px) {
