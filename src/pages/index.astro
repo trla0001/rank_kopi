@@ -10,7 +10,6 @@ import FilterCategory from "../components/FilterCategory.astro";
 ---
 
 <MainLayouts title="Forside">
-  <FilterCategory />
   <Hero img="hero_desk.webp" heading="Lars Rank" button="" button_txt="Køb nu">
     <p>Håndlavet keramik med et personligt og unikt udtryk. Lavet med funktionalitet for øje.</p>
   </Hero>
@@ -35,7 +34,12 @@ import FilterCategory from "../components/FilterCategory.astro";
   </section>
   <section class="about">
     <div class="place">
-      <Text color="dark" heading="Keramikkeren bag"><p>Alle mine produkter er håndlavet med stor omhu på mit værksted på Christianshavn i København. Med en baggrund som uddannet billedkunstner, har jeg siden 2004 har jeg produceret keramik i høj kvalitet til boligen. Keramikken støbes i enten porcelæn og stentøj, og i mine designs har jeg altid fokus på at funktionaliteten kommer først.</p></Text>
+      <Text color="dark" heading="Keramikkeren bag"
+        ><p>
+          Alle mine produkter er håndlavet med stor omhu på mit værksted på Christianshavn i København. Med en baggrund som uddannet billedkunstner, har jeg siden 2004 har jeg produceret keramik i høj kvalitet til boligen. Keramikken støbes i enten porcelæn og stentøj, og i mine designs har jeg
+          altid fokus på at funktionaliteten kommer først.
+        </p></Text
+      >
       <Button type="secondary" link="#">Læs mere</Button>
     </div>
     <img src="/img/webp/lars_working.webp" alt="" />
