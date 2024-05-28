@@ -5,6 +5,10 @@ import Accordion from "../components/Accordion.astro";
 import Select from "../components/Select.astro";
 import Button from "../components/Button.astro";
 import ListProducts from "../components/ListProducts.astro";
+import FilterPrice from "../components/FilterPrice.astro";
+import Colorsample from "../components/Colorsample.astro";
+import FilterMaterial from "../components/FilterMaterial.astro";
+import FilterCategory from "../components/FilterCategory.astro";
 
 const { img, heading, category, type } = Astro.props;
 ---
@@ -21,10 +25,10 @@ const { img, heading, category, type } = Astro.props;
         <p>Mest relevant</p>
       </Select>
       <Select type="sorting" img="tune.svg" title="filtre">
-        <Accordion type="filter" title="Pris">Noget</Accordion>
-        <Accordion type="filter" title="Farve">Noget</Accordion>
-        <Accordion type="filter" title="Materiale">Noget</Accordion>
-        <Accordion type="filter" title="Kategori">Noget</Accordion>
+        <Accordion type="filter" title="Pris"><FilterPrice /></Accordion>
+        <Accordion type="filter" title="Farve"><Colorsample /></Accordion>
+        <Accordion type="filter" title="Materiale"><FilterMaterial /></Accordion>
+        <Accordion type="filter" title="Kategori"><FilterCategory /></Accordion>
       </Select>
     </div>
 
@@ -70,7 +74,7 @@ const { img, heading, category, type } = Astro.props;
     section {
       display: grid;
       grid-template-columns: 1fr 3fr;
-      margin: 0 var(--spacing_13);
+      padding: var(--spacing_12) var(--spacing_13);
     }
     .products {
       display: grid;

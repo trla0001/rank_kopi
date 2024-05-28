@@ -8,8 +8,10 @@ const { img, heading, button, button_txt, side } = Astro.props;
   <img src=`/img/webp/${img}` alt="" />
   <article class={side}>
     <h1>{heading}</h1>
-    <slot />
-    <div class={button}>
+    <p>
+      <slot />
+    </p>
+    <div class=`top ${button}`>
       <Button type="primary" link="/products">{button_txt}</Button>
     </div>
   </article>
@@ -19,8 +21,8 @@ const { img, heading, button, button_txt, side } = Astro.props;
   section {
     display: flex;
     flex-direction: column;
-    gap: var(--spacing_5);
-    margin: 0 0 var(--spacing_9);
+    /* gap: var(--spacing_5);
+    /* margin: 0 0 var(--spacing_9); */
   }
 
   article {
@@ -30,10 +32,20 @@ const { img, heading, button, button_txt, side } = Astro.props;
     padding: var(--spacing_5);
   }
 
-  @media (min-width: 800px) {
+  .top {
+    margin-top: var(--spacing_2);
+  }
+
+  @media (min-width: 500px) {
+    p {
+      font-size: 1.25rem;
+    }
+  }
+  @media (min-width: 1000px) {
     section {
       display: grid;
       grid-template-columns: 1fr 1fr;
+      gap: var(--spacing_5);
     }
 
     img {
@@ -46,6 +58,10 @@ const { img, heading, button, button_txt, side } = Astro.props;
       grid-row: 1 / span 1;
       align-self: center;
       padding: 0px 100px;
+    }
+
+    p {
+      font-size: 1.25rem;
     }
 
     .right {

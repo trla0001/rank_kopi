@@ -35,7 +35,7 @@ console.log(myData);
 ---
 
 <SingleLayouts>
-  <Breadcrumbs />
+  <Breadcrumbs current={myData.name} />
   <div class="layout">
     <div class="product">
       <Gallery img={myData.img} img_1={myData.img_x[0]} img_2={myData.img_x[1]} />
@@ -43,8 +43,10 @@ console.log(myData);
         <img src=`/img/webp/products/${myData.img}` alt="" />
       </section> -->
       <section class="info">
-        <p class="collection">{myData.collection}</p>
-        <h1 class="name">{myData.name}</h1>
+        <div class="text">
+          <p class="collection">{myData.collection}</p>
+          <h1 class="name">{myData.name}</h1>
+        </div>
         <p>
           <span class="price price_sale">{myData.price}</span>
           <span class="price_kr price_sale"> kr</span>
@@ -101,20 +103,18 @@ console.log(myData);
 
 <style>
   section {
-    margin: var(--spacing_8) var(--spacing_6);
+    margin: var(--spacing_6) var(--spacing_5);
   }
 
   h1 {
     font-size: 2.25rem;
   }
-
   /* INFORMATIONER */
   .info {
     display: flex;
     flex-direction: column;
-    gap: var(--spacing_6);
+    gap: var(--spacing_4);
   }
-
   article {
     display: flex;
     flex-direction: column;
@@ -124,11 +124,11 @@ console.log(myData);
 
   .colors {
     display: flex;
-    gap: var(--spacing_4);
+    gap: var(--spacing_3);
   }
 
   .collection {
-    font-size: 1.25rem;
+    font-size: 1.125rem;
   }
   .dimensioner {
     display: flex;
@@ -171,19 +171,25 @@ console.log(myData);
     width: 100%;
   }
 
+  button:hover {
+    box-shadow:
+      0px 1px 3px rgb(190, 190, 190, 0.8),
+      0px 4px 10px rgb(190, 190, 190, 0.8);
+  }
+
   /* RELATEREDE PRODUKTER */
   .related {
     display: flex;
     flex-direction: column;
     gap: var(--spacing_5);
     /* align-items: center; */
+    margin-bottom: var(--spacing_9);
   }
 
   .placeholder {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
-    gap: var(--spacing_3);
-    padding: var(--spacing_3);
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: var(--spacing_4);
   }
 
   .button {
@@ -193,7 +199,7 @@ console.log(myData);
     .layout {
       display: flex;
       flex-direction: column;
-      gap: var(--spacing_11);
+      gap: var(--spacing_4);
     }
 
     .product {
@@ -205,11 +211,22 @@ console.log(myData);
     .info {
       display: flex;
       flex-direction: column;
-      gap: var(--spacing_4);
+      gap: var(--spacing_6);
+      margin: 0;
     }
 
+    .related {
+      gap: var(--spacing_8);
+    }
     .related h2 {
       align-self: center;
+    }
+
+    .placeholder {
+      grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+    }
+    .colors {
+      gap: var(--spacing_4);
     }
   }
 </style>
