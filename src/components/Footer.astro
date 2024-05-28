@@ -1,6 +1,5 @@
 ---
 import Accordion from "./Accordion.astro";
-import FormButton from "./FormButton.astro";
 import FormInput from "./FormInput.astro";
 import Link from "./Link.astro";
 ---
@@ -22,14 +21,14 @@ import Link from "./Link.astro";
       </Accordion>
       <Accordion type="footer" title="Info">
         <div class="info">
-          <Link>Handelsbetingelser</Link>
-          <Link>Levering og fragt</Link>
-          <Link>Returnering</Link>
-          <Link>E-handel</Link>
+          <Link type="footer" label="Handelsbetingelser" />
+          <Link type="footer" label="Levering og fragt" />
+          <Link type="footer" label="Returnering" />
+          <Link type="footer" label="E-handel" />
         </div>
       </Accordion>
     </article>
-    <article>
+    <article class="newsletter">
       <p class="heading">Nyhedsbrev</p>
       <div class="form">
         <FormInput type="nyhed" text="Tilmed" />
@@ -119,16 +118,19 @@ import Link from "./Link.astro";
     gap: var(--spacing_4);
   }
 
+  /* NYHEDSBREV OG SOME */
+  .newsletter,
+  .social_flex {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing_4);
+    align-items: start;
+  }
+
   .form {
     display: flex;
     flex-direction: row;
     gap: var(--spacing_4);
-  }
-
-  .social_flex {
-    display: flex;
-    flex-direction: column;
-    align-items: start;
   }
   .social_icon_flex {
     display: flex;
@@ -136,6 +138,13 @@ import Link from "./Link.astro";
     align-items: center;
     justify-items: center;
     gap: var(--spacing_3);
+  }
+  /*********************** DESKTOP ***********************/
+
+  .mobile {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing_8);
   }
 
   /*********************** DESKTOP ***********************/
