@@ -17,17 +17,17 @@ import SubMenu from "./SubMenu.astro";
         <SubMenu type="nav" title="Produkter">
           <SubMenu type="nav" title="Bordæning">
             <Link link="/#" variant="sub_passive" label="Fade" />
-            <Link link="/categories/kopper" variant="sub" label="Krus og kopper" />
-            <Link link="/categories/kander" variant="sub" label="Kander" />
+            <Link link="/type/kopper" variant="sub" label="Krus og kopper" />
+            <Link link="/type/kander" variant="sub" label="Kander" />
             <Link link="/#" variant="sub_passive" label="Skåle" />
-            <Link link="/categories/tallerkner" variant="sub" label="Tallerkner" />
+            <Link link="/type/tallerkner" variant="sub" label="Tallerkner" />
           </SubMenu>
           <SubMenu title="Interiør">
             <Link link="/#" variant="sub_passive" label="Fyrfadsstager" />
             <Link link="/#" variant="sub_passive" label="Lamper" />
             <Link link="/#" variant="sub_passive" label="Lysestager" />
-            <Link link="/categories/urtepotter" variant="sub" label="Urtepotter" />
-            <Link link="/categories/vaser" variant="sub" label="Vaser" />
+            <Link link="/type/urtepotter" variant="sub" label="Urtepotter" />
+            <Link link="/type/vaser" variant="sub" label="Vaser" />
           </SubMenu>
           <SubMenu title="Pynt">
             <Link link="/#" variant="sub_passive" label="Ophæng" />
@@ -38,6 +38,7 @@ import SubMenu from "./SubMenu.astro";
             <Link link="/#" variant="sub_passive" label="Ørestikker" />
           </SubMenu>
           <SubMenu title="Kollektioner">
+            <Link link="/collection/blue-hills" variant="sub" label="Blue Hills" />
             <Link link="/collection/colours" variant="sub" label="Colours" />
             <Link link="/#" variant="sub_passive" label="Dots Smykker" />
             <Link link="/collection/stabel" variant="sub_passive" label="Stabel" />
@@ -79,18 +80,18 @@ import SubMenu from "./SubMenu.astro";
         <div class="category">
           <Link link="/#" variant="special_passive" label="Bordækning" />
           <Link link="/#" variant="sub_passive" label="Fade" />
-          <Link link="/categories/kopper" variant="sub" label="Krus og kopper" />
-          <Link link="/categories/kander" variant="sub" label="Kander" />
+          <Link link="/type/kopper" variant="sub" label="Krus og kopper" />
+          <Link link="/type/kander" variant="sub" label="Kander" />
           <Link link="/#" variant="sub_passive" label="Skåle" />
-          <Link link="/categories/tallerkner" variant="sub" label="Tallerkner" />
+          <Link link="/type/tallerkner" variant="sub" label="Tallerkner" />
         </div>
         <div class="category">
           <Link link="/#" variant="special_passive" label="Interiør" />
           <Link link="/#" variant="sub_passive" label="Fyrfadsstager" />
           <Link link="/#" variant="sub_passive" label="Lamper" />
           <Link link="/#" variant="sub_passive" label="Lysestager" />
-          <Link link="/categories/urtepotter" variant="sub" label="Urtepotter" />
-          <Link link="/categories/vaser" variant="sub" label="Vaser" />
+          <Link link="/type/urtepotter" variant="sub" label="Urtepotter" />
+          <Link link="/type/vaser" variant="sub" label="Vaser" />
         </div>
         <div class="category">
           <Link link="/#" variant="special_passive" label="Pynt" />
@@ -107,7 +108,7 @@ import SubMenu from "./SubMenu.astro";
       <div class="category">
         <!-- <h4>Kollektioner</h4> -->
         <Link link="/#" variant="special_passive" label="Kollektioner" />
-
+        <Link link="/collection/blue-hills" variant="sub" label="Blue Hills" />
         <Link link="/collection/colours" variant="sub" label="Colours" />
         <Link link="/#" variant="sub_passive" label="Dots Smykker" />
         <Link link="/collection/stabel" variant="sub_passive" label="Stabel" />
