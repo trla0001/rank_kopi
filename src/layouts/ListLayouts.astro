@@ -10,7 +10,7 @@ import Colorsample from "../components/Colorsample.astro";
 import FilterMaterial from "../components/FilterMaterial.astro";
 import FilterCategory from "../components/FilterCategory.astro";
 
-const { img, heading, column, type } = Astro.props;
+const { img, heading, list_column, list_type } = Astro.props;
 ---
 
 <MainLayouts>
@@ -33,7 +33,7 @@ const { img, heading, column, type } = Astro.props;
     </div>
 
     <article>
-      <ListProducts column={column} type={type} />
+      <ListProducts column={list_column} type={list_type} />
       <!-- <Button type="secondary" link="#">Indlæs flere</Button> -->
     </article>
   </section>
