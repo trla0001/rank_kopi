@@ -3,29 +3,30 @@ const { img, img_1, img_2, img_3 } = Astro.props;
 ---
 
 <article>
+  <img src=`/img/webp/products/${img}` alt="Produkt billede" class="main" />
   <div class="">
     <img src=`/img/webp/products/${img_1}` class="img_1" />
     <img src=`/img/webp/products/${img_2}` class="img_2" />
   </div>
-  <img src=`/img/webp/products/${img}` alt="Produkt billede" class="main" />
 </article>
 
 <style>
   article {
     display: grid;
-    grid-template-columns: 0.95fr 3fr;
+    grid-template-columns: 3fr 0.95fr;
     gap: var(--spacing_4);
+    padding: 0 var(--spacing_5);
   }
 
   div {
     display: flex;
     flex-direction: column;
     gap: var(--spacing_4);
-    grid-column: 1 / span 1;
+    grid-column: 2 / span 1;
   }
 
   .main {
-    grid-column: 2 / span 1;
+    grid-column: 1 / span 1;
   }
 
   .hide {
@@ -33,5 +34,25 @@ const { img, img_1, img_2, img_3 } = Astro.props;
   }
   img {
     border-radius: var(--radius_m);
+  }
+
+  @media (min-width: 800px) {
+    article {
+      display: grid;
+      grid-template-columns: 0.95fr 3fr;
+      gap: var(--spacing_4);
+      padding: 0;
+    }
+
+    div {
+      display: flex;
+      flex-direction: column;
+      gap: var(--spacing_4);
+      grid-column: 1 / span 1;
+    }
+
+    .main {
+      grid-column: 2 / span 1;
+    }
   }
 </style>

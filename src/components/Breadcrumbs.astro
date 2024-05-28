@@ -15,11 +15,17 @@ const { link } = Astro.props;
     flex-direction: row;
     align-items: center;
     gap: var(--spacing_5);
-    margin: var(--spacing_6);
+    margin: var(--spacing_4);
   }
   p {
     font-family: var(--font_body);
     font-size: 1rem;
     color: var(--secondary_500);
+  }
+
+  @media (min-width: 800px) {
+    article {
+      margin: var(--spacing_6);
+    }
   }
 </style>

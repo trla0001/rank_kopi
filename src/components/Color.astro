@@ -18,6 +18,12 @@ const { img, type } = Astro.props;
   }
 
   .singleview {
-    width: 32px;
+    width: 24px;
+  }
+
+  @media (min-width: 800px) {
+    .singleview {
+      width: 32px;
+    }
   }
 </style>
