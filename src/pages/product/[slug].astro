@@ -32,6 +32,12 @@ export async function getStaticPaths() {
 // Definere en prop, som dataen der er fetchet
 const { myData } = Astro.props;
 console.log(myData);
+
+let udsolgt = false;
+if (!myData.hvid && !myData.raa_rust && !myData.gron && !myData.graagraa && !myData.morkegron && !myData.gul && !myData.havblaa && !myData.rust && !myData.sortbrun && !myData.lyseblaa && !myData.morkebrun && !myData.blue) {
+  // console.log("produktet er udsolgt");
+  udsolgt = true;
+}
 ---
 
 <SingleLayouts>
@@ -48,9 +54,16 @@ console.log(myData);
           <h1 class="name">{myData.name}</h1>
         </div>
         <p>
-          <span class="price price_sale">{myData.price}</span>
-          <span class="price_kr price_sale"> kr</span>
-          <span class="price_old">XXXX</span><span class="price_old_kr"> kr</span>
+          <span class="price">{myData.price}</span>
+          <span class="price_kr"> kr</span>
+          {
+            myData.price_old && (
+              <span class="price_old">
+                {myData.price_old}
+                <span class="price_old_kr"> kr</span>
+              </span>
+            )
+          }
         </p>
         <div class="colors">
           {myData.hvid && <Color type="singleview" img="hvid.webp" />}
@@ -66,7 +79,8 @@ console.log(myData);
           {myData.mørkebrun && <Color type="singleview" img="morkebrun.webp" />}
         </div>
         <FormCounter />
-        <button>Tilføj til kurv</button>
+        {!udsolgt && <button>Tilføj til kurv</button>}
+        {udsolgt && <button class="waitlist">Tilmeld venteliste</button>}
 
         <article>
           <div class="dimensioner">
@@ -169,6 +183,11 @@ console.log(myData);
     padding: var(--spacing_4) var(--spacing_6);
     display: block;
     width: 100%;
+  }
+
+  .waitlist {
+    background-color: transparent;
+    color: var(--accent_600);
   }
 
   button:hover {
