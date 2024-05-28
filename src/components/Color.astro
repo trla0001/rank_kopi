@@ -1,9 +1,9 @@
 ---
-const { img, type } = Astro.props;
+const { type, img, alt } = Astro.props;
 ---
 
 <div class={type}>
-  <img src=`/img/webp/colors/${img}` />
+  <img src=`/img/webp/colors/${img}` alt=`Farveprøve af ${alt} glasur` />
 </div>
 
 <style>

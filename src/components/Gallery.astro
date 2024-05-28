@@ -3,10 +3,10 @@ const { img, img_1, img_2, img_3 } = Astro.props;
 ---
 
 <article>
-  <img src=`/img/webp/products/${img}` alt="Produkt billede" class="main" />
+  <img src=`/img/webp/products/${img}` alt="Produktbillede" class="main" />
   <div class="">
-    <img src=`/img/webp/products/${img_1}` class="img_1" />
-    <img src=`/img/webp/products/${img_2}` class="img_2" />
+    <img src=`/img/webp/products/${img_1}` class="img_1" alt="et andet produktbillede" />
+    <img src=`/img/webp/products/${img_2}` class="img_2" alt="et tredje produktbillede" />
   </div>
 </article>
 
