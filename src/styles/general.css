@@ -91,7 +91,7 @@ img {
 
 h1 {
   font-family: var(--font_display);
-  font-size: 4rem;
+  font-size: 3rem;
   font-weight: 400;
   color: var(--secondary_500);
 }

@@ -33,21 +33,17 @@ import FilterCategory from "../components/FilterCategory.astro";
     </div>
   </section>
   <section class="about">
-    <div class="place">
-      <Text color="dark" heading="Keramikkeren bag"
-        ><p>
-          Alle mine produkter er håndlavet med stor omhu på mit værksted på Christianshavn i København. Med en baggrund som uddannet billedkunstner, har jeg siden 2004 har jeg produceret keramik i høj kvalitet til boligen. Keramikken støbes i enten porcelæn og stentøj, og i mine designs har jeg
-          altid fokus på at funktionaliteten kommer først.
-        </p></Text
-      >
-      <Button type="secondary" link="#">Læs mere</Button>
-    </div>
     <img src="/img/webp/lars_working.webp" alt="" />
+    <Text color="dark" heading="Keramikkeren bag">
+      <p>
+        Alle mine produkter er håndlavet med stor omhu på mit værksted på Christianshavn i København. Med en baggrund som uddannet billedkunstner, har jeg siden 2004 har jeg produceret keramik i høj kvalitet til boligen. Keramikken støbes i enten porcelæn og stentøj, og i mine designs har jeg altid
+        fokus på at funktionaliteten kommer først.
+      </p>
+      <Button type="secondary" link="#">Læs mere</Button>
+    </Text>
   </section>
   <section class="background some">
-    <div class="place">
-      <Text color="light" heading="Følg med"><p class="light">Følg min kreative rejse på Instagram, og få et indblik i mit keramiske univers. Her kan du følge med i udviklingen af nye produkter, se processen bag og deltage i konkurrencer.</p></Text>
-    </div>
+    <Text color="light" heading="Følg med"><p class="light">Følg min kreative rejse på Instagram, og få et indblik i mit keramiske univers. Her kan du følge med i udviklingen af nye produkter, se processen bag og deltage i konkurrencer.</p></Text>
     <div class="order">
       <InstagramGrid />
     </div>
@@ -155,6 +151,10 @@ import FilterCategory from "../components/FilterCategory.astro";
     .some {
       display: grid;
       grid-template-columns: 1fr 1fr;
+    }
+
+    .order {
+      order: -1;
     }
   }
 </style>
