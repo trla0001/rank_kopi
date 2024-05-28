@@ -2,6 +2,12 @@
 import Color from "./Color.astro";
 
 const { data } = Astro.props;
+
+let udsolgt = false;
+if (!data.gron && !data.gul) {
+  console.log("gul og grøn udsolgt");
+  udsolgt = true;
+}
 ---
 
 <a href={`/product/${data.slug}`}>
@@ -35,6 +41,7 @@ const { data } = Astro.props;
       </p>
     </div>
     {data.price_old && <p class="flag discount">Udsalg</p>}
+    {udsolgt && <p class="flag sold">Udsolgt</p>}
 
     <!-- <p class="flag sold">Udsolgt</p> -->
   </article>
