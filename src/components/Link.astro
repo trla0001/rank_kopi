@@ -14,24 +14,35 @@ const { variant, link, label } = Astro.props;
     cursor: pointer;
     text-decoration: underline;
   }
-  .main {
+
+  /* MAIN */
+
+  .main,
+  .main_passive {
     font-size: 1.125rem;
     text-transform: uppercase;
   }
+
+  /* SPECIAL */
 
   .special,
   .special_passive {
     font-size: 1rem;
     font-weight: 600;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.25rem;
   }
+  /* SUB */
+
   .sub {
     font-size: 1rem;
   }
   .sub_passive {
     font-size: 1rem;
   }
-  .special_passive,
+
+  /* DØDE LINKS */
+  .main_passive:hover,
+  .special_passive:hover,
   .sub_passive:hover {
     text-decoration: none;
     cursor: not-allowed;

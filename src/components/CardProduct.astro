@@ -4,15 +4,15 @@ import Color from "./Color.astro";
 const { data } = Astro.props;
 
 let udsolgt = false;
-if (!data.gron && !data.gul) {
-  console.log("gul og grøn udsolgt");
+if (!data.hvid && !data.raa_rust && !data.gron && !data.graagraa && !data.morkegron && !data.gul && !data.havblaa && !data.rust && !data.sortbrun && !data.lyseblaa && !data.morkebrun && !data.blue) {
+  // console.log("gul og grøn udsolgt");
   udsolgt = true;
 }
 ---
 
 <a href={`/product/${data.slug}`}>
   <article>
-    <img src=`/img/webp/products/${data.img}` alt="Produkt billede" />
+    <img src=`/img/webp/products/${data.img}` alt=`Produkt billede af ${data.name}` />
     <div class="info">
       <div class="graphics">
         <div class="colors">
@@ -26,7 +26,8 @@ if (!data.gron && !data.gul) {
           {data.rust && <Color type="card" img="rust.webp" />}
           {data.sortbrun && <Color type="card" img="sortbrun.webp" />}
           {data.lyseblaa && <Color type="card" img="lyseblaa.webp" />}
-          {data.mørkebrun && <Color type="card" img="morkebrun.webp" />}
+          {data.morkebrun && <Color type="card" img="morkebrun.webp" />}
+          {data.blue && <Color type="card" img="blue.webp" />}
         </div>
         <button> </button>
       </div>
@@ -37,10 +38,17 @@ if (!data.gron && !data.gul) {
       <p>
         <span class="price">{data.price}</span>
         <span class="price_kr"> kr</span>
-        <!-- <span class="price_old">XXXX</span><span class="price_old_kr"> kr</span> -->
+        {
+          data.price_old && (
+            <span class="price_old">
+              {data.price_old}
+              <span class="price_old_kr"> kr</span>
+            </span>
+          )
+        }
       </p>
     </div>
-    {data.price_old && <p class="flag discount">Udsalg</p>}
+    {data.price_old && <p class="flag discount">Rabat</p>}
     {udsolgt && <p class="flag sold">Udsolgt</p>}
 
     <!-- <p class="flag sold">Udsolgt</p> -->
@@ -84,6 +92,7 @@ if (!data.gron && !data.gul) {
   .graphics {
     display: flex;
     justify-content: space-between;
+    align-items: center;
   }
 
   .colors {
@@ -134,10 +143,14 @@ if (!data.gron && !data.gul) {
   .price_old {
     margin-left: var(--spacing_3);
   }
+  .price,
+  .price_kr {
+    font-size: 1.125rem;
+  }
   .price_old,
   .price_old_kr {
     text-decoration: line-through;
-    font-size: 0.75rem;
+    font-size: 0.875rem;
   }
 
   button {

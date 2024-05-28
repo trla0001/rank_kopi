@@ -1,12 +1,12 @@
 ---
 import Link from "../components/Link.astro";
-const { link } = Astro.props;
+const { current } = Astro.props;
 ---
 
 <article>
   <Link link="/" variant="breadcrumb" label="Hjem" /><p>/</p>
   <Link link="/products" variant="breadcrumb" label="Produkter" /><p>/</p>
-  <p>Her</p>
+  <p>{current}</p>
 </article>
 
 <style>

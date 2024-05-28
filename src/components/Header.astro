@@ -16,16 +16,16 @@ import SubMenu from "./SubMenu.astro";
       <li class="mobile">
         <SubMenu type="nav" title="Produkter">
           <SubMenu type="nav" title="Bordæning">
-            <Link link="/#" variant="sub" label="Fade" />
+            <Link link="/#" variant="sub_passive" label="Fade" />
             <Link link="/categories/kopper" variant="sub" label="Krus og kopper" />
             <Link link="/categories/kander" variant="sub" label="Kander" />
-            <Link link="/#" variant="sub" label="Skåle" />
+            <Link link="/#" variant="sub_passive" label="Skåle" />
             <Link link="/categories/tallerkner" variant="sub" label="Tallerkner" />
           </SubMenu>
           <SubMenu title="Interiør">
-            <Link link="/#" variant="sub" label="Fyrfadsstager" />
-            <Link link="/#" variant="sub" label="Lamper" />
-            <Link link="/#" variant="sub" label="Lysestager" />
+            <Link link="/#" variant="sub_passive" label="Fyrfadsstager" />
+            <Link link="/#" variant="sub_passive" label="Lamper" />
+            <Link link="/#" variant="sub_passive" label="Lysestager" />
             <Link link="/categories/urtepotter" variant="sub" label="Urtepotter" />
             <Link link="/categories/vaser" variant="sub" label="Vaser" />
           </SubMenu>
@@ -38,16 +38,16 @@ import SubMenu from "./SubMenu.astro";
             <Link link="/#" variant="sub_passive" label="Ørestikker" />
           </SubMenu>
           <SubMenu title="Kollektioner">
-            <Link link="/collection/colours" variant="sub_passive" label="Colours" />
+            <Link link="/collection/colours" variant="sub" label="Colours" />
             <Link link="/#" variant="sub_passive" label="Dots Smykker" />
             <Link link="/collection/stabel" variant="sub_passive" label="Stabel" />
             <Link link="/#" variant="sub_passive" label="You Little Teapot" />
           </SubMenu>
           <div class="others">
-            <Link link="/#" variant="main" label="Nyheder" />
-            <Link link="/#" variant="main" label="Udsalg" />
+            <Link link="/#" variant="main_passive" label="Nyheder" />
+            <Link link="/#" variant="main_passive" label="Udsalg" />
             <Link link="/products" variant="main" label="Alle Produkter" />
-            <Link link="/#" variant="main" label="Gavekort" />
+            <Link link="/#" variant="main_passive" label="Gavekort" />
           </div>
         </SubMenu>
       </li>
@@ -77,42 +77,45 @@ import SubMenu from "./SubMenu.astro";
     <article class="submenu">
       <div class="product_category">
         <div class="category">
-          <h4>Bordækning</h4>
-          <Link link="/#" variant="sub" label="Fade" />
+          <Link link="/#" variant="special_passive" label="Bordækning" />
+          <Link link="/#" variant="sub_passive" label="Fade" />
           <Link link="/categories/kopper" variant="sub" label="Krus og kopper" />
           <Link link="/categories/kander" variant="sub" label="Kander" />
-          <Link link="/#" variant="sub" label="Skåle" />
+          <Link link="/#" variant="sub_passive" label="Skåle" />
           <Link link="/categories/tallerkner" variant="sub" label="Tallerkner" />
         </div>
         <div class="category">
-          <h4>Interiør</h4>
-          <Link link="/#" variant="sub" label="Fyrfadsstager" />
-          <Link link="/#" variant="sub" label="Lamper" />
-          <Link link="/#" variant="sub" label="Lysestager" />
+          <Link link="/#" variant="special_passive" label="Interiør" />
+          <Link link="/#" variant="sub_passive" label="Fyrfadsstager" />
+          <Link link="/#" variant="sub_passive" label="Lamper" />
+          <Link link="/#" variant="sub_passive" label="Lysestager" />
           <Link link="/categories/urtepotter" variant="sub" label="Urtepotter" />
           <Link link="/categories/vaser" variant="sub" label="Vaser" />
         </div>
         <div class="category">
-          <h4>Pynt</h4>
+          <Link link="/#" variant="special_passive" label="Pynt" />
+
           <Link link="/#" variant="sub_passive" label="Ophæng" />
         </div>
         <div class="category">
-          <h4>Smykker</h4>
+          <Link link="/#" variant="special_passive" label="Smykker" />
           <Link link="/#" variant="sub_passive" label="Armbånd" />
           <Link link="/#" variant="sub_passive" label="Halskæder" />
           <Link link="/#" variant="sub_passive" label="Ørestikker" />
         </div>
       </div>
       <div class="category">
-        <h4>Kollektioner</h4>
-        <Link link="/collection/colours" variant="sub_passive" label="Colours" />
+        <!-- <h4>Kollektioner</h4> -->
+        <Link link="/#" variant="special_passive" label="Kollektioner" />
+
+        <Link link="/collection/colours" variant="sub" label="Colours" />
         <Link link="/#" variant="sub_passive" label="Dots Smykker" />
         <Link link="/collection/stabel" variant="sub_passive" label="Stabel" />
         <Link link="/#" variant="sub_passive" label="You Little Teapot" />
       </div>
       <div class="category">
-        <Link link="/#" variant="special" label="Nyheder" />
-        <Link link="/#" variant="special" label="Udsalg" />
+        <Link link="/#" variant="special_passive" label="Nyheder" />
+        <Link link="/#" variant="special_passive" label="Udsalg" />
         <Link link="/products" variant="special" label="Alle Produkter" />
         <Link link="/#" variant="special_passive" label="Gavekort" />
       </div>
@@ -135,6 +138,10 @@ import SubMenu from "./SubMenu.astro";
 
   .logo {
     height: 60px;
+  }
+
+  .h4:hover {
+    cursor: not-allowed;
   }
 
   nav {
@@ -207,7 +214,7 @@ import SubMenu from "./SubMenu.astro";
     top: 205px;
     left: 50%;
     width: 100%;
-    padding: var(--spacing_4);
+    /* padding: var(--spacing_4); */
     background: var(--primary_300);
     opacity: 0;
     visibility: hidden;
@@ -321,10 +328,10 @@ import SubMenu from "./SubMenu.astro";
       display: block;
     }
     header {
-      padding: var(--spacing_4) var(--spacing_12);
+      padding: var(--spacing_4) var(--spacing_13);
     }
     .logo {
-      width: 130px;
+      height: 60px;
     }
   }
 </style>
