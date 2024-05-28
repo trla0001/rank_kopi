@@ -21,9 +21,7 @@ const data = await fetch("https://hhmpiztfssfaluwezhgq.supabase.co/rest/v1/rank_
 ---
 
 <MainLayouts>
-  <Hero img="tester2.png" heading="Tester" button="hide" button_txt="">
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia accusantium, quas, natus rem cum optio ullam praesentium repudiandae molestiae, ex facere vel autem architecto? Animi dolor similique qui minus nulla.</p>
-  </Hero>
+  <Hero img="tester2.png" heading="Tester" button="hide" button_txt=""> Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia accusantium, quas, natus rem cum optio ullam praesentium repudiandae molestiae, ex facere vel autem architecto? Animi dolor similique qui minus nulla. </Hero>
   <section>
     <div class="menu">
       <Select img="filter_alt.svg" title="Sorter">
@@ -60,50 +58,49 @@ const data = await fetch("https://hhmpiztfssfaluwezhgq.supabase.co/rest/v1/rank_
       </div>
       <Button type="secondary" link="#">Indlæs flere</Button>
     </article>
-
-    <style>
-      section {
-        display: flex;
-        flex-direction: column;
-        gap: var(--spacing_5);
-        margin: var(--spacing_6);
-      }
-
-      article {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: var(--spacing_5);
-      }
-
-      .menu {
-        display: flex;
-
-        gap: var(--spacing_4);
-      }
-
-      .products {
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-        gap: var(--spacing_5);
-      }
-
-      @media (min-width: 800px) {
-        .menu {
-          flex-direction: column;
-        }
-
-        section {
-          display: grid;
-          grid-template-columns: 1fr 3fr;
-          margin: 0 var(--spacing_13);
-        }
-        .products {
-          display: grid;
-          grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-          gap: var(--spacing_5);
-        }
-      }
-    </style>
   </section>
 </MainLayouts>
+<style>
+  section {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing_5);
+    margin: var(--spacing_6);
+  }
+
+  article {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing_5);
+  }
+
+  .menu {
+    display: flex;
+
+    gap: var(--spacing_4);
+  }
+
+  .products {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: var(--spacing_5);
+  }
+
+  @media (min-width: 800px) {
+    .menu {
+      flex-direction: column;
+    }
+
+    section {
+      display: grid;
+      grid-template-columns: 1fr 3fr;
+      padding: var(--spacing_12) var(--spacing_13);
+    }
+    .products {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: var(--spacing_5);
+    }
+  }
+</style>

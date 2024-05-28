@@ -44,8 +44,8 @@ console.log(myData);
       </section> -->
       <section class="info">
         <div class="text">
-          <h1 class="name">{myData.name}</h1>
           <p class="collection">{myData.collection}</p>
+          <h1 class="name">{myData.name}</h1>
         </div>
         <p>
           <span class="price price_sale">{myData.price}</span>
@@ -199,7 +199,7 @@ console.log(myData);
     .layout {
       display: flex;
       flex-direction: column;
-      gap: var(--spacing_11);
+      gap: var(--spacing_4);
     }
 
     .product {
@@ -211,13 +211,20 @@ console.log(myData);
     .info {
       display: flex;
       flex-direction: column;
-      gap: var(--spacing_4);
+      gap: var(--spacing_6);
+      margin: 0;
     }
 
+    .related {
+      gap: var(--spacing_8);
+    }
     .related h2 {
       align-self: center;
     }
 
+    .placeholder {
+      grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+    }
     .colors {
       gap: var(--spacing_4);
     }

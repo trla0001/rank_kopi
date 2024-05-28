@@ -38,10 +38,7 @@ const { img, img_1, img_2, img_3 } = Astro.props;
 
   @media (min-width: 800px) {
     article {
-      display: grid;
       grid-template-columns: 0.95fr 3fr;
-      gap: var(--spacing_4);
-      padding: 0;
     }
 
     div {
@@ -49,6 +46,7 @@ const { img, img_1, img_2, img_3 } = Astro.props;
       flex-direction: column;
       gap: var(--spacing_4);
       grid-column: 1 / span 1;
+      grid-row: 1 / span 1;
     }
 
     .main {

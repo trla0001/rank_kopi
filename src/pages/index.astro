@@ -10,9 +10,7 @@ import FilterCategory from "../components/FilterCategory.astro";
 ---
 
 <MainLayouts title="Forside">
-  <Hero img="hero_desk.webp" heading="Lars Rank" button="" button_txt="Køb nu">
-    <p>Håndlavet keramik med et personligt og unikt udtryk. Lavet med funktionalitet for øje.</p>
-  </Hero>
+  <Hero img="hero_desk.webp" heading="Lars Rank" button="" button_txt="Køb nu"> Håndlavet keramik med et personligt og unikt udtryk. Lavet med funktionalitet for øje. </Hero>
   <section>
     <h2>Populære Produkter</h2>
     <div class="carousel">
@@ -24,12 +22,14 @@ import FilterCategory from "../components/FilterCategory.astro";
   </section>
   <section class="background collections">
     <h2 class="light">Kollektioner</h2>
-    <CardCollection img="bluehills.webp" collection="Blue Hills" animation="scroll" />
-    <div class="flex_end">
-      <CardCollection img="colours.webp" collection="Colours" animation="scroll_2" />
-    </div>
-    <div class="flex_center">
-      <CardCollection img="vaser.webp" collection="Stabel Serien" animation="scroll" />
+    <div class="collection_cards">
+      <CardCollection img="bluehills.webp" collection="Blue Hills" animation="scroll" />
+      <div class="flex_end">
+        <CardCollection img="colours.webp" collection="Colours" animation="scroll_2" />
+      </div>
+      <div class="flex_center">
+        <CardCollection img="vaser.webp" collection="Stabel Serien" animation="scroll" />
+      </div>
     </div>
   </section>
   <section class="about">
@@ -43,9 +43,9 @@ import FilterCategory from "../components/FilterCategory.astro";
     </Text>
   </section>
   <section class="background some">
-    <Text color="light" heading="Følg med"><p class="light">Følg min kreative rejse på Instagram, og få et indblik i mit keramiske univers. Her kan du følge med i udviklingen af nye produkter, se processen bag og deltage i konkurrencer.</p></Text>
+    <InstagramGrid />
     <div class="order">
-      <InstagramGrid />
+      <Text color="light" heading="Følg med"><p class="light">Følg min kreative rejse på Instagram, og få et indblik i mit keramiske univers. Her kan du følge med i udviklingen af nye produkter, se processen bag og deltage i konkurrencer.</p></Text>
     </div>
   </section>
 </MainLayouts>
@@ -59,7 +59,7 @@ import FilterCategory from "../components/FilterCategory.astro";
     color: var(--secondary_500);
   }
   .background {
-    background-color: var(--accent_900);
+    background-color: var(--secondary_500);
   }
 
   /* GENERAL SECTION */
@@ -80,12 +80,18 @@ import FilterCategory from "../components/FilterCategory.astro";
   }
 
   /* KOLLEKTIONER SECTION */
+
   .collections {
     display: flex;
     flex-direction: column;
     gap: var(--spacing_6);
   }
 
+  .collection_cards {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing_3);
+  }
   .flex_end {
     display: flex;
     justify-content: end;
@@ -112,45 +118,43 @@ import FilterCategory from "../components/FilterCategory.astro";
     flex-direction: column;
     gap: var(--spacing_6);
   }
-  .order {
-    order: -2;
-  }
 
   /********************************************************** Tablet version **********************************************************/
   @media (min-width: 600px) {
-    .collections {
-      padding: 50px 5%;
+    section,
+    .background {
+      padding: var(--spacing_8) var(--spacing_10);
     }
   }
 
   /********************************************************** Desk version **********************************************************/
   @media (min-width: 1000px) {
     /* GENERAL SECTION */
-    section {
-      padding: 50px 160px;
-    }
 
+    section,
+    .background {
+      padding: var(--spacing_12) var(--spacing_13);
+    }
+    /* COLLECTIONS SECTION */
     .collections {
-      padding: 50px 15%;
+      gap: var(--spacing_8);
+    }
+    .collection_cards {
+      gap: var(--spacing_4);
     }
 
     /* CARROUSEL SECTION */
     h2 {
       text-align: center;
-      padding: 0 0 var(--spacing_11) 0;
     }
 
     /* ABOUT AND SO ME SECTION */
-    .place {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      gap: var(--spacing_5);
-    }
     .about,
     .some {
       display: grid;
       grid-template-columns: 1fr 1fr;
+      gap: var(--spacing_12);
+      align-items: center;
     }
 
     .order {
