@@ -28,16 +28,24 @@ const data = await fetch("https://hhmpiztfssfaluwezhgq.supabase.co/rest/v1/rank_
     min-width: 300%;
     /* Allow items to wrap if they exceed container width */
     flex-wrap: nowrap;
-    height: 450px;
+    height: 500px;
   }
 
   .carousel::-webkit-scrollbar {
     display: none;
   }
 
-  @media (min-width: 800px) {
+  @media (min-width: 600px) {
     .carousel {
-      min-width: 100%;
+      min-width: 180%;
+      height: 600px;
+    }
+  }
+
+  @media (min-width: 1000px) {
+    .carousel {
+      min-width: 150%;
+      height: 450px;
     }
   }
 </style>
