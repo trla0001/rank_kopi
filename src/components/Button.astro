@@ -56,6 +56,13 @@ const { type, color, link, hide } = Astro.props;
   .secondary:visited {
     color: var(--accent_600);
   }
+  .disabled:visited,
+  .disabled {
+    border-color: var(--secondary_200);
+    color: var(--secondary_200);
+    background-color: transparent;
+    cursor: default;
+  }
 
   /********** color - prop  **********/
   .primary .light {
