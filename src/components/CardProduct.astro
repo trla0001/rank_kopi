@@ -1,7 +1,7 @@
 ---
 import Color from "./Color.astro";
 
-const { data } = Astro.props;
+const { data, type } = Astro.props;
 
 let udsolgt = false;
 if (!data.hvid && !data.raa_rust && !data.gron && !data.graagraa && !data.morkegron && !data.gul && !data.havblaa && !data.rust && !data.sortbrun && !data.lyseblaa && !data.morkebrun && !data.blue) {
@@ -10,7 +10,7 @@ if (!data.hvid && !data.raa_rust && !data.gron && !data.graagraa && !data.morkeg
 }
 ---
 
-<a href={`/product/${data.slug}`}>
+<a href={`/product/${data.slug}`} class={type}>
   <article>
     <img src=`/img/webp/products/${data.img}` alt=`Produktbillede af ${data.name}` />
     <div class="info">
@@ -56,6 +56,10 @@ if (!data.hvid && !data.raa_rust && !data.gron && !data.graagraa && !data.morkeg
 </a>
 
 <style>
+  .carrousel {
+    width: 190px;
+  }
+
   a {
     background-color: var(--primary_200);
     text-decoration: none;

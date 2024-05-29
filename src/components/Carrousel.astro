@@ -11,11 +11,13 @@ const data = await fetch("https://hhmpiztfssfaluwezhgq.supabase.co/rest/v1/rank_
 ---
 
 <div class="carousel">
-  {
-    data.map((product, i) => {
-      return <CardProduct data={product} />;
-    })
-  }
+  <div class="cards">
+    {
+      data.map((product) => {
+        return <CardProduct data={product} type="carrousel" />;
+      })
+    }
+  </div>
 </div>
 
 <style>
@@ -25,27 +27,31 @@ const data = await fetch("https://hhmpiztfssfaluwezhgq.supabase.co/rest/v1/rank_
     align-items: center;
     gap: var(--spacing_4);
     /* Set a minimum width to ensure horizontal scrolling */
-    min-width: 300%;
+    min-width: 250%;
     /* Allow items to wrap if they exceed container width */
     flex-wrap: nowrap;
-    height: 500px;
+    height: 400px;
   }
 
+  .cards {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--spacing_5);
+    padding-left: var(--spacing_4);
+  }
   .carousel::-webkit-scrollbar {
     display: none;
   }
 
-  @media (min-width: 600px) {
+  @media (min-width: 500px) {
     .carousel {
-      min-width: 180%;
-      height: 600px;
+      min-width: 100%;
     }
   }
 
   @media (min-width: 1000px) {
     .carousel {
       min-width: 100%;
-      height: 450px;
     }
   }
 </style>

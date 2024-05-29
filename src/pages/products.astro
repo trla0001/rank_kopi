@@ -36,21 +36,10 @@ const data = await fetch("https://hhmpiztfssfaluwezhgq.supabase.co/rest/v1/rank_
     <article>
       <div class="products">
         {
-          data.map((product, i) => {
+          data.map((product) => {
             return <CardProduct data={product} />;
           })
         }
-
-        <!-- Herter dataen for hvert element som er lig eller over 6, og laver et CardProduct med den, som ligger i en div, som ikke kan ses (pga class 'hide') -->
-        <!-- <div class="extra hide">
-        {
-          data.map((product, i) => {
-            if (i >= 8) {
-              return <CardProduct data={product} />;
-            }
-          })
-        }
-      </div> -->
       </div>
       <Button type="disabled" link="#">Indlæs flere</Button>
     </article>
