@@ -10,7 +10,7 @@ import CardCollection from "../components/CardCollection.astro";
 
 <MainLayouts title="Forside">
   <Hero img_desk="products_desk.webp" img="products_mobile.webp" heading="Lars Rank" button="" button_txt="Køb nu"> Håndlavet keramik med et personligt og unikt udtryk. Lavet med funktionalitet for øje. </Hero>
-  <section>
+  <section class="nopadding">
     <h2>Populære Produkter</h2>
     <div class="carousel">
       <Carrousel />
@@ -34,7 +34,10 @@ import CardCollection from "../components/CardCollection.astro";
   <section class="about">
     <img src="/img/webp/lars_working.webp" alt="Billede af Keramikker Lars som arbejder" />
     <Text color="dark" heading="Keramikkeren bag">
-      <p>Alle mine produkter er håndlavet med stor omhu på mit værksted på Christianshavn i København. Med en baggrund som uddannet billedkunstner, har jeg siden 2004 har jeg produceret keramik i høj kvalitet til boligen. Keramikken støbes i enten porcelæn og stentøj, og i mine designs har jeg altid fokus på at funktionaliteten kommer først.</p>
+      <p>
+        Alle mine produkter er håndlavet med stor omhu på mit værksted på Christianshavn i København. Med en baggrund som uddannet billedkunstner, har jeg siden 2004 har jeg produceret keramik i høj kvalitet til boligen. Keramikken støbes i enten porcelæn og stentøj, og i mine designs har jeg altid
+        fokus på at funktionaliteten kommer først.
+      </p>
       <Button type="secondary" link="#">Læs mere</Button>
     </Text>
   </section>
@@ -142,6 +145,11 @@ import CardCollection from "../components/CardCollection.astro";
     /* CARROUSEL SECTION */
     h2 {
       text-align: center;
+    }
+
+    .nopadding {
+      padding-right: 0;
+      padding-left: 0;
     }
 
     /* ABOUT AND SO ME SECTION */
