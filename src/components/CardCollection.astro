@@ -1,11 +1,11 @@
 ---
-const { img, collection, animation } = Astro.props;
+const { img, collection, animation, h3 } = Astro.props;
 ---
 
 <a href="#">
   <article class={animation}>
     <img src=`/img/webp/${img}` alt="Billede af kollektion" />
-    <h3>{collection}</h3>
+    <h3 class={h3}>{collection}</h3>
   </article>
 </a>
 
@@ -35,16 +35,23 @@ const { img, collection, animation } = Astro.props;
       0px 4px 10px rgb(26, 16, 9, 0.95);
     scale: 1.005;
   }
-  h3 {
+  .right {
     position: absolute;
     top: 40%;
     right: 5%;
   }
 
+  .left {
+    left: 5%;
+  }
+
   @media (min-width: 800px) {
-    h3 {
+    .right {
       top: 40%;
       right: 10%;
+    }
+    .left {
+      left: 10%;
     }
   }
 
