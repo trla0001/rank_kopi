@@ -14,7 +14,7 @@ import SubMenu from "./SubMenu.astro";
       <li class="desktop overlay-trigger"><p class="products">Produkter</p></li>
       <!-- <li><Link link="/products" variant="main" label="Produkter" /></li> -->
       <li class="mobile">
-        <SubMenu type="nav" title="Produkter">
+        <SubMenu title="Produkter">
           <SubMenu type="nav" title="Bordæning">
             <Link link="/#" variant="sub_passive" label="Fade" />
             <Link link="/type/kopper" variant="sub" label="Krus og kopper" />
@@ -22,22 +22,22 @@ import SubMenu from "./SubMenu.astro";
             <Link link="/#" variant="sub_passive" label="Skåle" />
             <Link link="/type/tallerkner" variant="sub" label="Tallerkner" />
           </SubMenu>
-          <SubMenu title="Interiør">
+          <SubMenu type="nav" title="Interiør">
             <Link link="/#" variant="sub_passive" label="Fyrfadsstager" />
             <Link link="/#" variant="sub_passive" label="Lamper" />
             <Link link="/#" variant="sub_passive" label="Lysestager" />
             <Link link="/type/urtepotter" variant="sub" label="Urtepotter" />
             <Link link="/type/vaser" variant="sub" label="Vaser" />
           </SubMenu>
-          <SubMenu title="Pynt">
+          <SubMenu type="nav" title="Pynt">
             <Link link="/#" variant="sub_passive" label="Ophæng" />
           </SubMenu>
-          <SubMenu title="Smykker">
+          <SubMenu type="nav" title="Smykker">
             <Link link="/#" variant="sub_passive" label="Armbånd" />
             <Link link="/#" variant="sub_passive" label="Halskæder" />
             <Link link="/#" variant="sub_passive" label="Ørestikker" />
           </SubMenu>
-          <SubMenu title="Kollektioner">
+          <SubMenu type="nav" title="Kollektioner">
             <Link link="/collection/blue-hills" variant="sub" label="Blue Hills" />
             <Link link="/collection/colours" variant="sub" label="Colours" />
             <Link link="/#" variant="sub_passive" label="Dots Smykker" />
@@ -45,10 +45,10 @@ import SubMenu from "./SubMenu.astro";
             <Link link="/#" variant="sub_passive" label="You Little Teapot" />
           </SubMenu>
           <div class="others">
-            <Link link="/#" variant="main_passive" label="Nyheder" />
-            <Link link="/#" variant="main_passive" label="Udsalg" />
-            <Link link="/products" variant="main" label="Alle Produkter" />
-            <Link link="/#" variant="main_passive" label="Gavekort" />
+            <Link link="/#" variant="nav_passive" label="Nyheder" />
+            <Link link="/#" variant="nav_passive" label="Udsalg" />
+            <Link link="/products" variant="nav" label="Alle Produkter" />
+            <Link link="/#" variant="nav_passive" label="Gavekort" />
           </div>
         </SubMenu>
       </li>
@@ -73,6 +73,7 @@ import SubMenu from "./SubMenu.astro";
     </div>
   </article>
 </header>
+<!-- OVERLAY -->
 <div class="overlay overlay01 desktop">
   <div class="overlay-close overlay_box">
     <article class="submenu">
@@ -171,6 +172,7 @@ import SubMenu from "./SubMenu.astro";
   .menu li {
     margin-right: var(--spacing_9);
     white-space: nowrap;
+    width: 93%;
   }
 
   /* .menu li:last-child {
@@ -192,7 +194,8 @@ import SubMenu from "./SubMenu.astro";
   .others {
     display: flex;
     flex-direction: column;
-    gap: var(--spacing_6);
+    gap: var(--spacing_5);
+    margin-top: var(--spacing_3);
   }
 
   /***********************************  OVERLAY  ***********************************/
@@ -317,7 +320,7 @@ import SubMenu from "./SubMenu.astro";
       top: 49px;
       left: 0;
       width: 100%;
-      height: 800px;
+      height: 900px;
       z-index: 5;
       display: flex;
       flex-direction: column;
