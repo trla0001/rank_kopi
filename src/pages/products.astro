@@ -22,7 +22,7 @@ const data = await fetch("https://hhmpiztfssfaluwezhgq.supabase.co/rest/v1/rank_
 ---
 
 <MainLayouts>
-  <Hero img="tester2.png" heading="Alle Produkter" button="hide" button_txt=""> Håndlavet keramik med et personligt og unikt udtryk, lavet med funktionalitet for øje. Find dine favoritter og sammensæt din helt egen stil. </Hero>
+  <Hero img="products_mobile.webp" img_desk="products_desk.webp" heading="Alle Produkter" button="hide" button_txt=""> Håndlavet keramik med et personligt og unikt udtryk, lavet med funktionalitet for øje. Find dine favoritter og sammensæt din helt egen stil. </Hero>
   <section>
     <div class="menu">
       <Select img="filter_alt.svg" title="Sorter">
@@ -72,7 +72,12 @@ const data = await fetch("https://hhmpiztfssfaluwezhgq.supabase.co/rest/v1/rank_
     gap: var(--spacing_5);
   }
 
-  @media (min-width: 800px) {
+  @media (min-width: 500px) {
+    section {
+      padding: var(--spacing_8) var(--spacing_10);
+    }
+  }
+  @media (min-width: 1000px) {
     .menu {
       flex-direction: column;
     }
