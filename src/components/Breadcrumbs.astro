@@ -14,18 +14,22 @@ const { current } = Astro.props;
     display: flex;
     flex-direction: row;
     align-items: center;
-    gap: var(--spacing_5);
+    gap: var(--spacing_4);
     margin: var(--spacing_4);
   }
   p {
     font-family: var(--font_body);
-    font-size: 1rem;
+    font-size: 0.825rem;
     color: var(--secondary_500);
   }
 
-  @media (min-width: 800px) {
+  @media (min-width: 1000px) {
     article {
       margin: var(--spacing_6);
+      gap: var(--spacing_5);
+    }
+    p {
+      font-size: 1rem;
     }
   }
 </style>

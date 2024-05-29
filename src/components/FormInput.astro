@@ -16,8 +16,19 @@ const { type, text } = Astro.props;
 
   .udsolgt {
     display: flex;
-    flex-direction: column;
+    /* flex-direction: column; */
     gap: var(--spacing_3);
+  }
+
+  .udsolgt input {
+    color: var(--secondary_500);
+    background-color: var(--primary_200);
+    border: 3px solid var(--primary_400);
+  }
+  .udsolgt .button {
+    color: var(--accent_600);
+    background-color: transparent;
+    border-color: var(--accent_600);
   }
 
   /* GENEREL STYLING */
@@ -32,11 +43,12 @@ const { type, text } = Astro.props;
   /* INPUT STYLING */
   input {
     color: var(--secondary_500);
-    background-color: var(--primary_100);
+    background-color: var(--primary_300);
     border: 3px solid var(--primary_600);
   }
 
-  input:focus {
+  input:focus,
+  .udsolgt input:focus {
     border: 3px solid var(--primary_600);
     outline: none;
   }

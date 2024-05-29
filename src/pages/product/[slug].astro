@@ -6,6 +6,7 @@ import Color from "../../components/Color.astro";
 import FormCounter from "../../components/FormCounter.astro";
 import Gallery from "../../components/Gallery.astro";
 import SingleLayouts from "../../layouts/SingleLayouts.astro";
+import FormInput from "../../components/FormInput.astro";
 
 // Laver statiske stier til hvert element i databasen
 export async function getStaticPaths() {
@@ -80,7 +81,7 @@ if (!myData.hvid && !myData.raa_rust && !myData.gron && !myData.graagraa && !myD
         </div>
         <FormCounter />
         {!udsolgt && <button>Tilføj til kurv</button>}
-        {udsolgt && <button class="waitlist">Tilmeld venteliste</button>}
+        {udsolgt && <FormInput type="udsolgt" text="Tilmeld venteliste" />}
 
         <article>
           <div class="dimensioner">
