@@ -6,7 +6,7 @@ const { img, img_desk, heading, button, button_txt, side } = Astro.props;
 
 <section>
   <picture>
-    <source media="(min-width:1000px)" srcset=`/img/webp/hero/${img_desk}` class="Billede af produkter" />
+    <source media="(min-width:500px)" srcset=`/img/webp/hero/${img_desk}` class="Billede af produkter" />
     <img src=`/img/webp/hero/${img}` alt="Billede af produkter" />
   </picture>
   <article class={side}>
@@ -36,6 +36,7 @@ const { img, img_desk, heading, button, button_txt, side } = Astro.props;
   .top {
     margin-top: var(--spacing_2);
   }
+
   p {
     font-size: 1.25rem;
   }
@@ -44,6 +45,10 @@ const { img, img_desk, heading, button, button_txt, side } = Astro.props;
   @media (min-width: 500px) {
     p {
       font-size: 1.25rem;
+    }
+
+    article {
+      padding: var(--spacing_8) var(--spacing_10);
     }
   }
   /********************************************************** Desk version **********************************************************/
@@ -63,6 +68,10 @@ const { img, img_desk, heading, button, button_txt, side } = Astro.props;
 
     picture {
       grid-column: 1 / span 2;
+      grid-row: 1 / span 1;
+    }
+    .right {
+      grid-column: 1 / span 1;
       grid-row: 1 / span 1;
     }
   }
