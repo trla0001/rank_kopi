@@ -3,14 +3,15 @@ import Hero from "../components/Hero.astro";
 import MainLayouts from "../layouts/MainLayouts.astro";
 import Accordion from "../components/Accordion.astro";
 import Select from "../components/Select.astro";
-import Button from "../components/Button.astro";
 import ListProducts from "../components/ListProducts.astro";
 import FilterPrice from "../components/FilterPrice.astro";
 import Colorsample from "../components/Colorsample.astro";
 import FilterMaterial from "../components/FilterMaterial.astro";
 import FilterCategory from "../components/FilterCategory.astro";
+import FilterCollection from "../components/FilterCollection.astro";
+import Filter from "../components/Filter.astro";
 
-const { img, heading, list_column, list_type } = Astro.props;
+const { type, img, heading, list_column, list_type } = Astro.props;
 ---
 
 <MainLayouts>
@@ -24,12 +25,7 @@ const { img, heading, list_column, list_type } = Astro.props;
         <p>høj til lav - pris</p>
         <p>Mest relevant</p>
       </Select>
-      <Select type="sorting" img="tune.svg" title="filtre">
-        <Accordion type="filter" title="Pris"><FilterPrice /></Accordion>
-        <Accordion type="filter" title="Farve"><Colorsample /></Accordion>
-        <Accordion type="filter" title="Materiale"><FilterMaterial /></Accordion>
-        <Accordion type="filter" title="Kategori"><FilterCategory /></Accordion>
-      </Select>
+      <Filter filter={type} />
     </div>
 
     <article>
@@ -64,6 +60,11 @@ const { img, heading, list_column, list_type } = Astro.props;
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
     gap: var(--spacing_5);
+  }
+
+  /* TYPE */
+  .collection {
+    display: hide;
   }
 
   @media (min-width: 800px) {

@@ -1,0 +1,37 @@
+---
+import Accordion from "./Accordion.astro";
+import FilterPrice from "../components/FilterPrice.astro";
+import Colorsample from "../components/Colorsample.astro";
+import FilterMaterial from "../components/FilterMaterial.astro";
+import FilterCategory from "../components/FilterCategory.astro";
+import FilterCollection from "../components/FilterCollection.astro";
+import Select from "./Select.astro";
+
+const { filter } = Astro.props;
+---
+
+<Select type="sorting" img="tune.svg" title="filtre">
+  <ul class={filter}>
+    <li><Accordion type="filter" title="Pris"><FilterPrice /></Accordion></li>
+    <li><Accordion type="filter" title="Farve"><Colorsample /></Accordion></li>
+    <li><Accordion type="filter" title="Materiale"><FilterMaterial /></Accordion></li>
+    <li><Accordion type="filter" title="Kollektion"><FilterCollection /></Accordion></li>
+    <li><Accordion type="filter" title="Kategori"><FilterCategory /></Accordion></li>
+  </ul>
+</Select>
+
+<style>
+  ul {
+    list-style: none;
+  }
+
+  /* TYPE - Collection */
+  .collection :nth-child(4) {
+    display: none;
+  }
+
+  /* TYPE - Category */
+  .category li:last-child {
+    display: none;
+  }
+</style>

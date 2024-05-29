@@ -10,6 +10,7 @@ import FilterCollection from "../components/FilterCollection.astro";
 import FilterMaterial from "../components/FilterMaterial.astro";
 import FilterPrice from "../components/FilterPrice.astro";
 import Colorsample from "../components/Colorsample.astro";
+import Filter from "../components/Filter.astro";
 
 // Fetcher data fra databasen og ligger i konstanten 'data'
 const data = await fetch("https://hhmpiztfssfaluwezhgq.supabase.co/rest/v1/rank_keramik", {
@@ -29,13 +30,7 @@ const data = await fetch("https://hhmpiztfssfaluwezhgq.supabase.co/rest/v1/rank_
         <p>høj til lav - pris</p>
         <p>Mest relevant</p>
       </Select>
-      <Select type="sorting" img="tune.svg" title="filtre">
-        <Accordion type="filter" title="Pris"><FilterPrice /></Accordion>
-        <Accordion type="filter" title="Farve"><Colorsample /></Accordion>
-        <Accordion type="filter" title="Materiale"><FilterMaterial /></Accordion>
-        <Accordion type="filter" title="Kategori"><FilterCategory /></Accordion>
-        <Accordion type="filter" title="Kollektion"><FilterCollection /></Accordion>
-      </Select>
+      <Filter />
     </div>
 
     <article>

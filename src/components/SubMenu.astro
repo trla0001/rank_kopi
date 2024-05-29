@@ -1,5 +1,5 @@
 ---
-const { type, img, title } = Astro.props;
+const { type, title } = Astro.props;
 ---
 
 <details class={type}>
@@ -14,7 +14,7 @@ const { type, img, title } = Astro.props;
 <style>
   details {
     background-color: var(--primary_300);
-    padding: var(--spacing_2) 0 var(--spacing_4);
+    padding: var(--spacing_2) 0 0;
     width: 100%;
     height: fit-content;
   }
@@ -39,7 +39,7 @@ const { type, img, title } = Astro.props;
     display: flex;
     flex-direction: column;
     gap: var(--spacing_2);
-    padding: var(--spacing_4) 0 0 var(--spacing_4);
+    padding: var(--spacing_2) 0 var(--spacing_4) var(--spacing_4);
   }
 
   /* Arrow icon */
@@ -49,5 +49,10 @@ const { type, img, title } = Astro.props;
   }
   details[open] > summary::after {
     transform: rotate(-180deg);
+  }
+
+  /* TYPE */
+  .nav .heading {
+    font-size: 1rem;
   }
 </style>

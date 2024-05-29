@@ -31,19 +31,27 @@ const { variant, link, label } = Astro.props;
     font-weight: 600;
     margin-bottom: 0.25rem;
   }
+  /* NAV */
+
+  .nav,
+  .nav_passive {
+    font-size: 1rem;
+    text-transform: uppercase;
+  }
+
   /* SUB */
 
-  .sub {
-    font-size: 1rem;
-  }
-  .sub_passive {
-    font-size: 1rem;
+  .main,
+  .main_passive {
+    font-size: 1.125rem;
+    text-transform: uppercase;
   }
 
   /* DØDE LINKS */
   .main_passive:hover,
   .special_passive:hover,
-  .sub_passive:hover {
+  .sub_passive:hover,
+  .nav_passive:hover {
     text-decoration: none;
     cursor: not-allowed;
   }
