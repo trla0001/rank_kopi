@@ -11,11 +11,11 @@ import FilterCategory from "../components/FilterCategory.astro";
 import FilterCollection from "../components/FilterCollection.astro";
 import Filter from "../components/Filter.astro";
 
-const { type, img, heading, list_column, list_type } = Astro.props;
+const { type, img, img_desk, heading, list_column, list_type } = Astro.props;
 ---
 
 <MainLayouts>
-  <Hero img={img} heading={heading} button="hide">
+  <Hero img={img} img_desk={img_desk} heading={heading} button="hide">
     <slot />
   </Hero>
   <section>
