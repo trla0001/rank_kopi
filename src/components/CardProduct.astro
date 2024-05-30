@@ -12,7 +12,7 @@ if (!data.hvid && !data.raa_rust && !data.gron && !data.graagraa && !data.morkeg
 
 <a href={`/product/${data.slug}`} class={type}>
   <article>
-    <img src=`/img/webp/products/${data.img}` alt=`Produktbillede af ${data.name}` />
+    <img src=`/img/webp/products/${data.img}` alt=`Produktbillede af ${data.name}` width="200px" height="200" />
     <div class="info">
       <div class="graphics">
         <div class="colors">
@@ -29,7 +29,7 @@ if (!data.hvid && !data.raa_rust && !data.gron && !data.graagraa && !data.morkeg
           {data.morkebrun && <Color type="card" img="morkebrun.webp" />}
           {data.blue && <Color type="card" img="blue.webp" />}
         </div>
-        <button> </button>
+        <button aria-label="Name"> </button>
       </div>
       <div class="text">
         <p>{data.name}</p>

@@ -1,11 +1,11 @@
 ---
-const { link, img } = Astro.props;
+const { alt, img } = Astro.props;
 ---
 
 <div>
-  <img class="height" src=`/img/webp/${img}` alt="Instagram post" />
-  <img src="/img/svg/instagram-light.svg" class="icon" />
-  <a href="https://www.instagram.com/larsrankkeramik/" class="filter"></a>
+  <img class="height" src=`/img/webp/${img}` alt={alt} />
+  <img src="/img/svg/instagram-light.svg" class="icon" alt="Instagram ikon" />
+  <a href="https://www.instagram.com/larsrankkeramik/" class="filter" aria-label=`link til ${alt}`></a>
 </div>
 
 <style>
