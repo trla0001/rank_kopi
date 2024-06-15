@@ -16,6 +16,8 @@ const { current } = Astro.props;
     align-items: center;
     gap: var(--spacing_4);
     margin: var(--spacing_4);
+    position: absolute;
+    z-index: 490;
   }
   p {
     font-family: var(--font_body);
@@ -25,6 +27,7 @@ const { current } = Astro.props;
 
   @media (min-width: 1000px) {
     article {
+      position: static;
       margin: var(--spacing_6);
       gap: var(--spacing_5);
     }
