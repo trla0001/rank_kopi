@@ -4,9 +4,9 @@ import Button from "../../components/Button.astro";
 import CardProductStatic from "../../components/CardProductStatic.astro";
 import Color from "../../components/Color.astro";
 import FormCounter from "../../components/FormCounter.astro";
-import Gallery from "../../components/Gallery.astro";
 import SingleLayouts from "../../layouts/SingleLayouts.astro";
 import FormInput from "../../components/FormInput.astro";
+import CarouselProduct from "../../components/CarouselProduct.astro";
 
 // Laver statiske stier til hvert element i databasen
 export async function getStaticPaths() {
@@ -45,7 +45,7 @@ if (!myData.hvid && !myData.raa_rust && !myData.gron && !myData.graagraa && !myD
   <Breadcrumbs current={myData.name} />
   <div class="layout">
     <div class="product">
-      <Gallery img={myData.img} img_1={myData.img_x[0]} img_2={myData.img_x[1]} />
+      <CarouselProduct img={myData.img} img_1={myData.img_x[0]} img_2={myData.img_x[1]} />
       <!-- <section class="image">
         <img src=`/img/webp/products/${myData.img}` alt="" />
       </section> -->
