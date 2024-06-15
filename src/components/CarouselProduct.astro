@@ -64,27 +64,25 @@ const { img, img_1, img_2 } = Astro.props;
 </div>
 
 <style>
+  /* GENERAL STYLING OF CAROUSEL */
   .wrapper {
     display: flex;
     flex-direction: column;
     position: relative;
   }
-
   .carousel {
     width: 100%;
-    height: 100%;
+    padding-bottom: 4px;
   }
-
-  ul.slides {
-    display: block;
+  .slides {
     position: relative;
-    height: 418px;
     margin: 0;
     padding: 0;
-    overflow: hidden;
     list-style: none;
+    height: 418px;
   }
 
+  /* Text & img = %selection for different browsers */
   .slides * {
     user-select: none;
     -ms-user-select: none;
@@ -94,6 +92,7 @@ const { img, img_1, img_2 } = Astro.props;
     -webkit-touch-callout: none;
   }
 
+  /* default checkboxes hidden */
   ul.slides input {
     display: none;
   }
@@ -106,19 +105,19 @@ const { img, img_1, img_2 } = Astro.props;
     top: 0;
   }
 
+  /* Before img is shown  */
   .slide-image {
     display: block;
-
     opacity: 0;
-    transition: all 0.7s ease-in-out;
+    transition: opacity 0.7s ease-in-out;
   }
-
   .slide-image img {
     width: 100%;
     min-width: 100%;
     height: 100%;
   }
 
+  /* CONTROLS STYLING */
   .carousel-controls {
     position: absolute;
     top: 0;
@@ -131,21 +130,12 @@ const { img, img_1, img_2 } = Astro.props;
   }
 
   .carousel-controls label {
-    /* display: none; */
     position: absolute;
     padding: 0 20px;
-    transition: opacity 0.2s;
     cursor: pointer;
   }
 
-  .slide-image:hover + .carousel-controls label {
-    opacity: 0.5;
-  }
-
-  .carousel-controls label:hover {
-    opacity: 1;
-  }
-
+  /* Arrows position and size  */
   .carousel-controls .prev-slide {
     width: 49%;
     text-align: left;
@@ -158,11 +148,11 @@ const { img, img_1, img_2 } = Astro.props;
     right: 0;
   }
 
+  /* DOTS STYLING */
   .carousel-dots {
-    position: absolute;
-    z-index: 490;
-    bottom: 20px;
-    left: 40px;
+    display: flex;
+    justify-content: center;
+    gap: 8px;
   }
 
   .carousel-dots .carousel-dot {
@@ -172,6 +162,7 @@ const { img, img_1, img_2 } = Astro.props;
     cursor: pointer;
   }
 
+  /* Background image for individual dot */
   #img-dot-1 {
     background-image: url(/img/webp/products/stabel-stor-urtepotte.webp);
     background-size: cover;
@@ -187,43 +178,29 @@ const { img, img_1, img_2 } = Astro.props;
     background-size: cover;
   }
 
+  /* CLICKED DOT STYLING */
   input:checked + .slide-container .slide-image {
     opacity: 1;
     transform: scale(1);
     transition: opacity 1s ease-in-out;
   }
-
   input:checked + .slide-container .carousel-controls label {
     display: block;
   }
 
-  input#img-1:checked ~ .carousel-dots label#img-dot-1,
-  input#img-2:checked ~ .carousel-dots label#img-dot-2,
-  input#img-3:checked ~ .carousel-dots label#img-dot-3,
-  input#img-4:checked ~ .carousel-dots label#img-dot-4,
-  input#img-5:checked ~ .carousel-dots label#img-dot-5,
-  input#img-6:checked ~ .carousel-dots label#img-dot-6 {
-    opacity: 1;
-  }
-
-  input:checked + .slide-container .nav label {
-    display: block;
-  }
-
+  /***************************************** DESK VERSION **************************************/
   @media screen and (min-width: 800px) {
     .wrapper {
       display: flex;
       flex-direction: row-reverse;
       gap: 8px;
     }
-
     .carousel-controls label {
       opacity: 0;
     }
     .carousel-controls label:hover {
       opacity: 1;
     }
-
     .carousel-dots {
       position: static;
       display: flex;
@@ -232,7 +209,6 @@ const { img, img_1, img_2 } = Astro.props;
       height: 418px;
       gap: 8px;
     }
-
     .carousel-dots .carousel-dot {
       display: inline-block;
       width: 150px;
