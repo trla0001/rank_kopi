@@ -1,5 +1,5 @@
 ---
-const { img, img_1, img_2 } = Astro.props;
+const { img, img_1, img_2, sub } = Astro.props;
 ---
 
 <div class="wrapper">
@@ -56,9 +56,11 @@ const { img, img_1, img_2 } = Astro.props;
     </ul>
   </div>
   <div class="carousel-dots">
-    <label for="img-1" class="carousel-dot" id="img-dot-1"></label>
-    <label for="img-2" class="carousel-dot" id="img-dot-2"></label>
-    <label for="img-3" class="carousel-dot" id="img-dot-3"></label>
+    <label for="img-1" class="carousel-dot" id="img-dot-1"><img src="/img/webp/products/stabel-stor-urtepotte.webp" alt="" /></label>
+
+    <label for="img-2" class="carousel-dot" id="img-dot-2"><img src="/img/webp/products/stabel-stor-urtepotte-1.webp" alt="" /></label>
+
+    <label for="img-3" class="carousel-dot" id="img-dot-3"><img src="/img/webp/products/stabel-stor-urtepotte-2.webp" alt="" /></label>
   </div>
 </div>
 
@@ -161,22 +163,6 @@ const { img, img_1, img_2 } = Astro.props;
     width: 100px;
     height: 100px;
     cursor: pointer;
-  }
-
-  /* Background image for individual dot */
-  #img-dot-1 {
-    background-image: url(/img/webp/products/stabel-stor-urtepotte.webp);
-    background-size: cover;
-  }
-
-  #img-dot-2 {
-    background-image: url(/img/webp/products/stabel-stor-urtepotte-1.webp);
-    background-size: cover;
-  }
-
-  #img-dot-3 {
-    background-image: url(/img/webp/products/stabel-stor-urtepotte-2.webp);
-    background-size: cover;
   }
 
   /* CLICKED DOT STYLING */
