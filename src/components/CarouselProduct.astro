@@ -55,7 +55,6 @@ const { img, img_1, img_2 } = Astro.props;
       </li>
     </ul>
   </div>
-
   <div class="carousel-dots">
     <label for="img-1" class="carousel-dot" id="img-dot-1"></label>
     <label for="img-2" class="carousel-dot" id="img-dot-2"></label>
@@ -109,7 +108,7 @@ const { img, img_1, img_2 } = Astro.props;
   .slide-image {
     display: block;
     opacity: 0;
-    transition: opacity 0.7s ease-in-out;
+    transition: all 0.7s ease-in-out;
   }
   .slide-image img {
     width: 100%;
@@ -130,7 +129,9 @@ const { img, img_1, img_2 } = Astro.props;
   }
 
   .carousel-controls label {
+    display: none;
     position: absolute;
+    opacity: 0;
     padding: 0 20px;
     cursor: pointer;
   }
